@@ -3,14 +3,341 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme-color" content="rgba(27, 36, 52, 1)">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Beranda - Votingkeun</title>
-  <link rel="icon" type="image/x-icon" href="asset/votingkeun-logo.png">
+  <link rel="icon" type="image/x-icon" href="asset/images/votingkeun-logo.png">
   <!-- bootstrap -->
-  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-  <!--  -->
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+  <!-- style -->
+  <link rel="stylesheet" href="asset/style/votingkeun-landing-page.css">
 </head>
 <body>
+
+  <!-- navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
+    <div class="container">
+      <a class="navbar-brand" href="#"> <img src="asset/images/Navbar brand.png" alt="Votingkeun brand" width="150" /> </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end gap-lg-2 flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Beranda</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Fitur
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Beranda</a></li>
+                <li><a class="dropdown-item" href="#">Fitur</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Harga</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Harga</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Artikel</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Kontak</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav> <!-- end navbar -->
+
+
+  <a href="#" class="help-center d-flex">
+    <div class="content-help">
+      <p>Butuh bantuan?</p>
+    </div>
+    <img src="asset/svg/atoms/icons/colored/rounded/whatsappwa icon.svg" alt="">
+  </a>
+
+  <!-- hero -->
+  <div class="container-fluid hero">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h2 class="hero-text fw-bolder">PEMUNGUTAN SUARA ANTI RIBET</h2>
+        <p class="sub-hero">Aman, Mudah, Terpercaya</p>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-5 col-10 d-flex flex-row justify-content-center gap-3 gap-lg-5">
+        <a href="#" class="btn btn-demo">Akun Demo</a>
+        <a href="#" class="btn btn-daftar">Daftar</a>
+    </div>
+  </div> <!-- end hero-->
+
+  <!-- fitur -->
+  <div class="container fitur">
+    <div class="row">
+      <div class="col-lg-6 col-12 d-block d-lg-none mb-3">
+        <img src="asset/images/mockup1.png" alt="fitur votingkeun" width="100%">
+      </div>
+      <div class="col-lg-6 col-12">
+        <h1>Fitur Votingkeun</h1>
+        <p>Berbagai fitur pemungutan suara lengkap, mulai dari manajemen voting hingga data laporan yang akurat.</p>
+      </div>
+      <div class="col-6 d-none d-lg-block">
+        <img src="asset/images/mockup1.png" alt="fitur votingkeun" width="100%">
+      </div>
+    </div>
+  </div> <!-- end fitur -->
   
+  <!-- solusi -->
+  <div class="container">
+    <div class="row text-center mt-5 pt-5 mb-5">
+      <div class="col-12 mt-5 pt-5">
+        <h1>Solusi yang kami berikan</h1>
+      </div>
+    </div>
+
+    <div class="row">
+
+      <!-- fitur di kiri -->
+      <div class="col-4 position-relative gap-5 d-flex flex-column">
+        <div class="col-12">
+          <div class="card shadow border-0">
+            <div class="card-body">
+              <div class="card-title-parent d-flex gap-2">
+                <img src="asset/svg/folder-add.svg" alt="folder">
+                <h5 class="card-title mt-auto fw-bold">Data user</h5>
+              </div>
+              <p class="card-text ms-5">Tersedia fitur untuk import export data user</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="card shadow border-0">
+            <div class="card-body">
+              <div class="card-title-parent d-flex gap-2">
+                <img src="asset/svg//time-clock.svg" alt="folder">
+                <h5 class="card-title mt-auto fw-bold">Vote time</h5>
+              </div>
+              <p class="card-text ms-5">Waktu dalam bilik suara dapat di atur dengan mudah</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="card shadow border-0">
+            <div class="card-body">
+              <div class="card-title-parent d-flex gap-2">
+                <img src="asset/svg/stats-pipes.svg" alt="folder">
+                <h5 class="card-title mt-auto fw-bold">Realtime</h5>
+              </div>
+              <p class="card-text ms-5">Laporan diupdate secara otomatis beberapa dalam saat. </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- fitur di kiri end -->
+
+      <div class="col-4">
+        <div class="col-12 mt-4">
+          <img src="asset/images/mockup2.png" alt="" class="img-fluid" style="margin-left: 0px;">
+        </div>
+      </div>
+
+      <!-- fitur di kanan -->
+      <div class="col-4 position-relative gap-5 d-flex flex-column">
+        <div class="col-12">
+          <div class="card shadow border-0">
+            <div class="card-body">
+              <div class="card-title-parent d-flex gap-2">
+                <img src="asset/svg/lock.svg" alt="folder">
+                <h5 class="card-title mt-auto fw-bold">Password</h5>
+              </div>
+              <p class="card-text ms-5">Tersedia fitur untuk reset password seluruh user dengan mudah.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="card shadow border-0">
+            <div class="card-body">
+              <div class="card-title-parent d-flex gap-2">
+                <img src="asset/svg/responsive.svg" alt="folder">
+                <h5 class="card-title mt-auto fw-bold">Responsive</h5>
+              </div>
+              <p class="card-text ms-5">Tampilan dapat menyesuaikan dengan segala jenis device.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="card shadow border-0">
+            <div class="card-body">
+              <div class="card-title-parent d-flex gap-2">
+                <img src="asset/svg/thumb-up.svg" alt="folder">
+                <h5 class="card-title mt-auto fw-bold">Mudah</h5>
+              </div>
+              <p class="card-text ms-5">Alur aplikasi mudah dipahami oleh semua kalangan.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- fitur di kiri end -->
+    </div>
+  </div>
+  <!-- solusi end -->
+
+
+  <!-- fitur lainnya -->
+  <div class="container">
+    <div class="row gap-3">
+      <div class="col-5">
+        <img src="asset/svg/voting@4x 1.svg" alt="vector" class="img-fluid">
+      </div>
+
+      <div class="col-6">
+        <div class="col-10">
+          <h1>Fitur lainnya yang kami miliki</h1>
+        </div>
+        <div class="col-12 mt-3">
+          <ul style="margin-left: -30px;" class="d-flex flex-column gap-3">
+            <li class="list-unstyled fst-italic" style="font-size: 23px;"><img src="asset/svg/star.svg" alt="star icon" class="me-1" style="margin-top: -8px;"> User tidak akan bisa golput </li>
+            <li class="list-unstyled fst-italic" style="font-size: 23px;"><img src="asset/svg/star.svg" alt="star icon" class="me-1" style="margin-top: -8px;"> Deteksi status user sudah vote / belum vote </li>
+            <li class="list-unstyled fst-italic" style="font-size: 23px;"><img src="asset/svg/star.svg" alt="star icon" class="me-1" style="margin-top: -8px;"> Setting voting dari jauh-jauh hari </li>
+            <li class="list-unstyled fst-italic" style="font-size: 23px;"><img src="asset/svg/star.svg" alt="star icon" class="me-1" style="margin-top: -8px;"> Data hasil voting dapat dilihat kembali </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- fitur lainnya end -->
+
+  <!-- Manfaat votingkeun -->
+  <div class="container">
+    <div class="row text-center mt-5 pt-5 mb-5 justify-content-center">
+      <div class="col-12 mt-5 pt-5">
+        <h1>Manfaat Votingkeun</h1>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+
+      <!-- fitur di kiri -->
+      <div class="col-4 position-relative d-flex flex-column">
+        <h4 class="text-center mb-3 pe-1" style="color: #1E1E1E; opacity: 85%;">Tanpa Votingkeun</h4>
+        <div class="col-11">
+          <div class="card shadow border-0 rounded-4" style="background-color: #FF6E65;">
+            <div class="card-body">
+              <h5 class="card-title text-light mt-auto fw-bold">Lokasi</h5>
+              <p class="card-text text-light" style="font-size: 19px;">Vote harus dalam tempat yang ditentukan</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-11 my-5">
+          <div class="card shadow border-0 rounded-4" style="background-color: #FF6E65;">
+            <div class="card-body">
+              <h5 class="card-title text-light mt-auto fw-bold">Rekapitulasi Hasil suara</h5>
+              <p class="card-text text-light" style="font-size: 19px;">Direkap secara manual oleh panitia</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-11">
+          <div class="card shadow border-0 rounded-4" style="background-color: #FF6E65;">
+            <div class="card-body">
+              <h5 class="card-title text-light mt-auto fw-bold">Arsip Data</h5>
+              <p class="card-text text-light" style="font-size: 19px;">Setelah selesai, biasanya data berceceran</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- fitur di kiri end -->
+
+      <div class="col-2 d-flex flex-column justify-content-center gap-4">
+        <div class="col-12 mt-5 text-center">
+          <img src="asset/svg/location-1.svg" alt="" class="img-fluid" style="margin-left: -15px;">
+        </div>
+        <div class="col-12 mt-5 text-center">
+          <img src="asset/svg/blackboard.svg" alt="" class="img-fluid" style="margin-left: -15px;">
+        </div>
+        <div class="col-12 mt-5 text-center">
+          <img src="asset/svg/files.svg" alt="" class="img-fluid" style="margin-left: -15px;">
+        </div>
+      </div>
+
+      <!-- fitur di kanan -->
+      <div class="col-4 position-relative d-flex flex-column">
+        <h4 class="text-center mb-3 pe-4" style="color: #1E1E1E; opacity: 85%;">Dengan Votingkeun</h4>
+        <div class="col-11">
+          <div class="card shadow border-0 rounded-4" style="background: #1B9C5E; padding-bottom: 30px">
+            <div class="card-body">
+              <h5 class="card-title text-light mt-auto fw-bold">Lokasi</h5>
+              <p class="card-text text-light" style="font-size: 19px;">Vote bisa dilakukan dimana saja</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-11 my-5">
+          <div class="card shadow border-0 rounded-4" style="background: #1B9C5E; padding-bottom: 30px">
+            <div class="card-body">
+              <h5 class="card-title text-light mt-auto fw-bold">Rekapitulasi Hasil suara</h5>
+              <p class="card-text text-light" style="font-size: 19px;">Otomatis direkap oleh aplikasi</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-11">
+          <div class="card shadow border-0 rounded-4" style="background: #1B9C5E;">
+            <div class="card-body">
+              <h5 class="card-title text-light mt-auto fw-bold">Arsip Data</h5>
+              <p class="card-text text-light" style="font-size: 19px;">Data masih tersimpan dalam aplikasi ketika voting selesai</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- fitur di kiri end -->
+
+    </div>
+  </div>
+  <!-- Manfaat votingkeun end -->
+
+  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    let body = document.getElementsByTagName('body')[0];
+    let navbar = document.getElementById('navbar');
+    let hero = document.querySelector('.hero');
+    let heroHeight = hero.offsetHeight;
+
+    
+    window.addEventListener('scroll', function() {
+      if (window.pageYOffset > heroHeight+200) {
+      
+        let oldCss = 'rgba(1,1,1,0.3)';
+        newOpacity = '0.5';
+        newCss = oldCss.replace(/[^,]+(?=\))/, newOpacity);
+        
+        navbar.classList.add('shadow');
+        navbar.style.opacity = 1;
+      } else {
+        navbar.classList.remove('shadow');
+        navbar.style.opacity = 0.7;
+      }
+    });
+
+  </script>
 </body>
 </html>
