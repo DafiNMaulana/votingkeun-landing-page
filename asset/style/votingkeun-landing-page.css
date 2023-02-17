@@ -3,9 +3,9 @@
 
 /* navbar */
 .navbar {
-    background-color: rgb(27, 36, 52);
-    opacity: .7;
+    background-color: rgba(27, 36, 52,.7);
     font-family: 'Poppins', sans-serif;
+    transition: .5s;
 }
 
 .navbar .nav-link {
@@ -201,4 +201,28 @@
 
 .card-title-parent h5 {
   color: #FFC34C;
+}
+
+.card-fitur {
+  transition: .3s;
+}
+
+.card-fitur:hover{
+  background-color: #FFC34C;
+  color: white;
+  cursor:default;
+}
+
+.card-fitur:hover .card-title-parent h5 {
+  color: white;
+  cursor:default;
+}
+
+.card-fitur .card-title-parent h5 {
+  transition: .3s;
+}
+
+/* FAQ */
+.accordion-item {
+  width: 198px;
 }
