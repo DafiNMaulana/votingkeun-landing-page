@@ -224,5 +224,37 @@
 
 /* FAQ */
 .accordion-item {
-  width: 198px;
+  width: 992px;
+}
+
+.accordion-button {
+  background-color: #1B2434 !important;
+  color: #fff;
+}
+.accordion-button:focus {
+  background-color: #1B2434 !important;
+  color: #fff;
+  box-shadow: none;
+}
+
+.rotate {
+  transform: rotate(90deg);
+}
+
+#polygonIcon {
+  transition: .5s;
+}
+
+.shadow-accordion {
+  box-shadow: 0 -0.5rem 1rem rgb(0 0 0 / 15%) !important;
+}
+.accordion-button::after {
+  height: 25px;
+  margin-left: 0 !important;
+  margin-right: 10px;
+  order: -1;
+}
+
+.accordion-button:not(.collapsed)::after {
+  transform: 90deg !important;
 }
