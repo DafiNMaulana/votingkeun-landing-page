@@ -512,7 +512,7 @@
   <!-- footer -->
   <div class="container-fluid m-0 p-0">
     <div class="row justify-content-center footer-hero">
-      <div class="col-lg-6 col-11 text-center rounded-4 text-light p-4" style="background-color: #2A3E63; margin-top: -100px; box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.25);">
+      <div class="col-lg-6 col-11 col-md-8 text-center rounded-4 text-light p-4" style="background-color: #2A3E63; margin-top: -100px; box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.25);">
         <h3 class="fw-bolder">Mau pakai Votingkeun sekarang?</h3>
         <p class="fs-5">Request Demo untuk pelajari lebih lanjut tentang Votingkeun</p>
         <button class="btn btn-warning" style="width: 180px; height: 50px; font-size: 20px; line-height: 10px;">Akun Demo</button>
@@ -554,68 +554,6 @@
 
   <script src="node_modules/jquery/dist/jquery.min.js"></script>
   <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    let body = document.getElementsByTagName('body')[0];
-    let navbar = document.getElementById('navbar');
-    let hero = document.querySelector('.hero');
-    let heroHeight = hero.offsetHeight;
-    
-    window.addEventListener('scroll', function() {
-      if (window.pageYOffset > heroHeight - 200) {
-        navbar.classList.add('shadow');
-        navbar.style.backgroundColor = "rgba(27, 36, 52,1)"
-      } else {
-        navbar.classList.remove('shadow');
-        navbar.style.backgroundColor = "rgba(27, 36, 52,.7)"
-      }
-    });
-
-    const accordionBtn = document.getElementById('accordionButton');
-
-    const rotateIcon = () => {
-      addEventListener('click', function() {
-      const icon = document.getElementById('polygonIcon');
-      icon.classList.toggle('rotate');
-      this.classList.toggle('shadow-accordion');
-    });
-    }
-
-    let carouselWidth = $(".carousel-inner")[0].scrollWidth;
-    let cardWidth = $(".carousel-item").width();
-    let scrollPosition = 0;
-
-    var multipleCardCarousel = document.querySelector(
-      "#carouselExampleControls"
-    );
-    if (window.matchMedia("(min-width: 768px)").matches) {
-      $(".carousel-control-next").on("click", function () {
-        if (scrollPosition < (carouselWidth - cardWidth * 4)) { //check if you can go any further
-          scrollPosition += cardWidth;  //update scroll position
-          $(".carousel-inner").animate({ scrollLeft: scrollPosition },600); //scroll left
-        }
-      });
-
-      $(".carousel-control-prev").on("click", function () {
-        if (scrollPosition > 0) {
-          scrollPosition -= cardWidth;
-          $(".carousel-inner").animate(
-            { scrollLeft: scrollPosition },
-            600
-          );
-        }
-      });
-      var carousel = new bootstrap.Carousel(multipleCardCarousel, {
-        interval: false
-      });
-    } else {
-      $(multipleCardCarousel).addClass("slide");
-    }
-
-    var carousel = new bootstrap.Carousel(multipleCardCarousel, {
-      interval: false,
-      wrap: false,
-    });
-
-  </script>
+  <script src="asset/js/votingkeun-landing-page.js"></script>
 </body>
 </html>
