@@ -8,6 +8,62 @@
     transition: .5s;
 }
 
+.dropdown-item {
+  transition: .3s;
+}
+
+.slideIn {
+  -webkit-animation-name: slideIn;
+  animation-name: slideIn;
+}
+
+@media (min-width: 768px) {
+  .animate {
+    animation-duration: 0.3s;
+    -webkit-animation-duration: 0.3s;
+    animation-fill-mode: both;
+    -webkit-animation-fill-mode: both;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(1rem);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0rem);
+    opacity: 1;
+  }
+
+  0% {
+    transform: translateY(1rem);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes slideIn {
+  0% {
+    -webkit-transform: transform;
+    -webkit-opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    -webkit-opacity: 1;
+  }
+
+  0% {
+    -webkit-transform: translateY(1rem);
+    -webkit-opacity: 0;
+  }
+}
+
+.dropdown-item:hover {
+  background-color: rgb(42, 58, 85);
+}
+
 .navbar .nav-link {
   color: #fff;
 }
@@ -80,6 +136,13 @@
   background-repeat: no-repeat;
 }
 
+
+@media (max-width: 992px) {
+  .hero {
+    height: 600px;
+  }
+}
+
 .hero::after {
   content: '';
   width: 100%;
@@ -132,6 +195,7 @@
   position: relative;
   top: 100px;
 }
+
 
 .fitur .col-lg-6 p {
   font-size: 27px;
@@ -222,9 +286,70 @@
   transition: .3s;
 }
 
+.list-unstyled {
+  font-size: 23px;
+}
+
+@media (max-width: 576px) {
+  .list-unstyled {
+    font-size: 20px;
+  }
+}
+
+/* Kesan */
+@media (min-width: 768px) {
+  .carousel-inner {
+    display: flex;
+  }
+  .carousel-item {
+    margin-right: 0;
+    flex: 0 0 33.333333%;
+    display: block;
+  }
+}
+
+.carousel-inner{
+  padding: 1em;
+}
+.card{
+  margin: 0 auto;
+  box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+  border: none;
+}
+.carousel-control-prev, .carousel-control-next{
+  background-color: #e1e1e1;
+  width: 6vh;
+  height: 6vh;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@media (max-width: 992px) {
+  .carousel-control-prev, .carousel-control-next{
+    width: 60px;
+    height: 60px;
+  }
+}
+
+.carousel-item > .card {
+  box-shadow:  2px 3px 15px rgba(0, 0, 0, 0.25); 
+  width: 312px;
+  height: 401px;
+  border-radius: 19px;
+}
+
+@media (max-width: 576px) {
+  .carousel-item > .card {
+    width: auto;
+  }
+}
+
 /* FAQ */
-.accordion-item {
-  width: 992px;
+@media (max-width: 576px) {
+  .accordion-button {
+    font-size: 16px !important;
+  }
 }
 
 .accordion-button {
