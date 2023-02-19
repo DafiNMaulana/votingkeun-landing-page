@@ -410,3 +410,24 @@
   bottom: 0;
   z-index: -1;
 }
+
+/* Harga */
+.diskon-price {
+  /* border: 1px solid white; */
+  position: relative;
+  margin-top: -10px;
+  margin-bottom: -40px;
+}
+.diskon-price h2, .diskon-price p {
+  position: relative;
+  color: rgba(255, 255, 255, 0.4);
+}
+.harga-card .diskon-price::after {
+  content: '';
+  display: block;
+  width: 150px;
+  height: 1px;
+  top: 42%;
+  position: absolute;
+  border-top: 3px solid rgba(255, 255, 255, 0.4);
+}
