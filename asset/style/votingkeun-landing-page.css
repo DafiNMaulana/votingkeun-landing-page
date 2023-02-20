@@ -335,7 +335,7 @@
 .carousel-item > .card {
   box-shadow:  2px 3px 15px rgba(0, 0, 0, 0.25); 
   width: 312px;
-  height: 401px;
+  /* height: 401px; */
   border-radius: 19px;
 }
 
@@ -430,4 +430,9 @@
   top: 42%;
   position: absolute;
   border-top: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+/* pagination */
+.page-item a {
+  color: #1D2939;
 }
