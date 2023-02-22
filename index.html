@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,28 +12,100 @@
   <link rel="stylesheet" href="asset/bootstrap/dist/css/bootstrap.css">
   <!-- style -->
   <link rel="stylesheet" href="asset/style/votingkeun-landing-page.css">
+
+  <style>
+    @media (min-width: 768px) {
+      .carousel-inner {
+        display: flex;
+      }
+
+      .carousel-item {
+        margin-right: 0;
+        flex: 0 0 33.333333%;
+        display: block;
+      }
+    }
+
+    .carousel-inner {
+      padding: 1em;
+    }
+
+    .card {
+      margin: 0 auto;
+      box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+      border: none;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+      background-color: #e1e1e1;
+      width: 6vh;
+      height: 6vh;
+      border-radius: 50%;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    @media (max-width: 992px) {
+
+      .carousel-control-prev,
+      .carousel-control-next {
+        width: 60px;
+        height: 60px;
+      }
+    }
+
+    .carousel-item>.card {
+      box-shadow: 2px 3px 15px rgba(0, 0, 0, 0.25);
+      width: 312px;
+      /* height: 401px; */
+      border-radius: 19px;
+    }
+
+    @media (max-width: 576px) {
+      .carousel-item>.card {
+        width: auto;
+      }
+    }
+  </style>
+
 </head>
+
 <body>
   <!-- navbar -->
   <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
     <div class="container">
-      <a class="navbar-brand" href="#"> <img src="asset/images/Navbar brand.png" alt="Votingkeun brand" width="150" /> </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+      <a href="frontend/signin.html" class="btn btn-warning d-md-none d-block"> <img src="asset/svg/person-fill.svg"
+          alt=""> sign in</a>
+      <!-- <div class="dropdown d-flex d-lg-none gap-2" style="margin-bottom: -15px;">
+          <img src="asset/svg/person-fill.svg" alt="" class="bg-warning d-block rounded-circle p-1 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="width: 30px; height: 30px; margin-top: 3px;"> 
+          <p class="text-light" style="margin-top: 6px;">Hi, Icikiwir!</p>
+          <ul class="dropdown-menu animate slideIn border-0 rounded-0 bg-warning" style="margin-top: -4px;">
+            <li><a class="dropdown-item text-dark dropdown-account" href="#"> <img src="asset/svg/logout.svg" alt="logout" style="width: 20px; margin-bottom: 3px;"> Logout</a></li>
+          </ul>
+      </div> -->
+      <a class="navbar-brand d-none d-md-block" href="#">
+        <img src="asset/images/Navbar brand.png" alt="Votingkeun brand" width="150" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+        aria-controls="offcanvasNavbar">
         <span></span>
         <span></span>
         <span></span>
       </button>
       <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
         <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasNavbarLabel"></h5>
+          <a class="offcanvas-title" id="offcanvasNavbarLabel">
+            <img src="asset/images/Navbar brand.png" alt="Votingkeun brand" width="150" />
+          </a>
           <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end gap-lg-2 flex-grow-1 pe-3">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Beranda</a>
+              <a class="nav-link active" aria-current="page" href="">Beranda</a>
             </li>
-            <li class="nav-item dropdown">
+            <!-- <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Fitur
               </a>
@@ -40,7 +113,7 @@
                 <li><a class="dropdown-item text-light" href="frontend/fitur.html">Fitur</a></li>
                 <li><a class="dropdown-item text-light" href="#">Harga</a></li>
               </ul>
-            </li>
+            </li> -->
             <li class="nav-item">
               <a class="nav-link" href="frontend/harga.html">Harga</a>
             </li>
@@ -49,6 +122,15 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="frontend/kontak.html">Kontak</a>
+            </li>
+            <li class="nav-item dropdown d-none d-lg-inline-block" style="margin-right: -70px;">
+              <a href="frontend/signin.html" class="btn btn-warning"> <img src="asset/svg/person-fill.svg" alt=""> sign
+                in</a>
+              <!-- <img src="asset/svg/person-fill.svg" alt="" class="bg-warning d-block rounded-circle p-1 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="width: 30px; height: 30px; margin-top: 3px;"> 
+                <ul class="dropdown-menu animate slideIn border-0 rounded-0 bg-warning" style="margin-left: -100px;">
+                  <li><a class="dropdown-item text-dark dropdown-account disabled" href="frontend/fitur.html">Hi, Icikiwir !</a></li>
+                  <li><a class="dropdown-item text-dark dropdown-account" href="#">Logout</a></li>
+                </ul> -->
             </li>
           </ul>
         </div>
@@ -76,461 +158,509 @@
       <div class="col-lg-5 col-10 d-flex flex-row justify-content-center gap-3 gap-lg-5">
         <a href="#" class="btn btn-demo">Akun Demo</a>
         <a href="#" class="btn btn-daftar">Daftar</a>
-    </div>
-  </div> <!-- end hero-->
+      </div>
+    </div> <!-- end hero-->
 
-  <!-- fitur -->
-  <div class="container fitur">
-    <div class="row">
-      <div class="col-lg-6 col-12 d-block d-lg-none mb-3">
-        <img src="asset/images/mockup1.png" alt="fitur votingkeun" width="100%">
+    <!-- fitur -->
+    <div class="container fitur">
+      <div class="row">
+        <div class="col-lg-6 col-12 d-block d-lg-none mb-3">
+          <img src="asset/images/mockup1.png" alt="fitur votingkeun" width="100%">
+        </div>
+        <div class="col-lg-6 col-12">
+          <h1 class="fw-bolder">Fitur Votingkeun</h1>
+          <p>Berbagai fitur pemungutan suara lengkap, mulai dari manajemen voting hingga data laporan yang akurat.</p>
+        </div>
+        <div class="col-6 d-none d-lg-block">
+          <img src="asset/images/mockup1.png" alt="fitur votingkeun" width="100%">
+        </div>
       </div>
-      <div class="col-lg-6 col-12">
-        <h1 class="fw-bolder">Fitur Votingkeun</h1>
-        <p>Berbagai fitur pemungutan suara lengkap, mulai dari manajemen voting hingga data laporan yang akurat.</p>
-      </div>
-      <div class="col-6 d-none d-lg-block">
-        <img src="asset/images/mockup1.png" alt="fitur votingkeun" width="100%">
-      </div>
-    </div>
-  </div> <!-- end fitur -->
-  
-  <!-- solusi -->
-  <div class="container">
-    <div class="row text-center mt-5 pt-5 mb-5">
-      <div class="col-12 mt-5 pt-5">
-        <h1 class="fw-bolder">Solusi yang kami berikan</h1>
-      </div>
-    </div>
+    </div> <!-- end fitur -->
 
-    <div class="row">
+    <!-- solusi -->
+    <div class="container">
+      <div class="row text-center mt-5 pt-5 mb-5">
+        <div class="col-12 mt-5 pt-5">
+          <h1 class="fw-bolder">Solusi yang kami berikan</h1>
+        </div>
+      </div>
 
-      <!-- fitur di kiri -->
-      <div class="col-12 col-lg-4 position-relative gap-5 d-flex flex-column">
-        <div class="col-12">
-          <div class="card shadow border-0 card-fitur">
-            <div class="card-body">
-              <div class="card-title-parent d-flex gap-2">
-                <img src="asset/svg/folder-add.svg" alt="folder">
-                <h5 class="card-title mt-auto fw-bold">Data user</h5>
+      <div class="row">
+
+        <!-- fitur di kiri -->
+        <div class="col-12 col-lg-4 position-relative gap-5 d-flex flex-column">
+          <div class="col-12">
+            <div class="card shadow border-0 card-fitur">
+              <div class="card-body">
+                <div class="card-title-parent d-flex gap-2">
+                  <img src="asset/svg/folder-add.svg" alt="folder">
+                  <h5 class="card-title mt-auto fw-bold">Data user</h5>
+                </div>
+                <p class="card-text ms-5">Tersedia fitur untuk import export data user</p>
               </div>
-              <p class="card-text ms-5">Tersedia fitur untuk import export data user</p>
+            </div>
+          </div>
+
+          <div class="col-12">
+            <div class="card shadow border-0 card-fitur">
+              <div class="card-body">
+                <div class="card-title-parent d-flex gap-2">
+                  <img src="asset/svg//time-clock.svg" alt="folder">
+                  <h5 class="card-title mt-auto fw-bold">Vote time</h5>
+                </div>
+                <p class="card-text ms-5">Waktu dalam bilik suara dapat di atur dengan mudah</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12">
+            <div class="card shadow border-0 card-fitur">
+              <div class="card-body">
+                <div class="card-title-parent d-flex gap-2">
+                  <img src="asset/svg/stats-pipes.svg" alt="folder">
+                  <h5 class="card-title mt-auto fw-bold">Realtime</h5>
+                </div>
+                <p class="card-text ms-5">Laporan diupdate secara otomatis beberapa dalam saat. </p>
+              </div>
             </div>
           </div>
         </div>
+        <!-- fitur di kiri end -->
 
-        <div class="col-12">
-          <div class="card shadow border-0 card-fitur">
-            <div class="card-body">
-              <div class="card-title-parent d-flex gap-2">
-                <img src="asset/svg//time-clock.svg" alt="folder">
-                <h5 class="card-title mt-auto fw-bold">Vote time</h5>
-              </div>
-              <p class="card-text ms-5">Waktu dalam bilik suara dapat di atur dengan mudah</p>
-            </div>
+        <div class="col-lg-4 col-12 col-md-12">
+          <div class="col-12 mt-4 text-center">
+            <img src="asset/images/mockup2.png" alt="" class="img-fluid" style="margin-left: 0px;">
           </div>
         </div>
 
-        <div class="col-12">
-          <div class="card shadow border-0 card-fitur">
-            <div class="card-body">
-              <div class="card-title-parent d-flex gap-2">
-                <img src="asset/svg/stats-pipes.svg" alt="folder">
-                <h5 class="card-title mt-auto fw-bold">Realtime</h5>
+        <!-- fitur di kanan -->
+        <div class="col-12 col-lg-4 position-relative gap-5 d-flex flex-column mt-lg-0 mt-4">
+          <div class="col-12">
+            <div class="card shadow border-0 card-fitur">
+              <div class="card-body">
+                <div class="card-title-parent d-flex gap-2">
+                  <img src="asset/svg/lock.svg" alt="folder">
+                  <h5 class="card-title mt-auto fw-bold">Password</h5>
+                </div>
+                <p class="card-text ms-5">Tersedia fitur untuk reset password seluruh user dengan mudah.</p>
               </div>
-              <p class="card-text ms-5">Laporan diupdate secara otomatis beberapa dalam saat. </p>
+            </div>
+          </div>
+
+          <div class="col-12">
+            <div class="card shadow border-0 card-fitur">
+              <div class="card-body">
+                <div class="card-title-parent d-flex gap-2">
+                  <img src="asset/svg/responsive.svg" alt="folder">
+                  <h5 class="card-title mt-auto fw-bold">Responsive</h5>
+                </div>
+                <p class="card-text ms-5">Tampilan dapat menyesuaikan dengan segala jenis device.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12">
+            <div class="card shadow border-0 card-fitur">
+              <div class="card-body">
+                <div class="card-title-parent d-flex gap-2">
+                  <img src="asset/svg/thumb-up.svg" alt="folder">
+                  <h5 class="card-title mt-auto fw-bold">Mudah</h5>
+                </div>
+                <p class="card-text ms-5">Alur aplikasi mudah dipahami oleh semua kalangan.</p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <!-- fitur di kiri end -->
-
-      <div class="col-lg-4 col-12 col-md-12">
-        <div class="col-12 mt-4 text-center">
-          <img src="asset/images/mockup2.png" alt="" class="img-fluid" style="margin-left: 0px;">
-        </div>
-      </div>
-
-      <!-- fitur di kanan -->
-      <div class="col-12 col-lg-4 position-relative gap-5 d-flex flex-column mt-lg-0 mt-4">
-        <div class="col-12">
-          <div class="card shadow border-0 card-fitur">
-            <div class="card-body">
-              <div class="card-title-parent d-flex gap-2">
-                <img src="asset/svg/lock.svg" alt="folder">
-                <h5 class="card-title mt-auto fw-bold">Password</h5>
-              </div>
-              <p class="card-text ms-5">Tersedia fitur untuk reset password seluruh user dengan mudah.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-12">
-          <div class="card shadow border-0 card-fitur">
-            <div class="card-body">
-              <div class="card-title-parent d-flex gap-2">
-                <img src="asset/svg/responsive.svg" alt="folder">
-                <h5 class="card-title mt-auto fw-bold">Responsive</h5>
-              </div>
-              <p class="card-text ms-5">Tampilan dapat menyesuaikan dengan segala jenis device.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-12">
-          <div class="card shadow border-0 card-fitur">
-            <div class="card-body">
-              <div class="card-title-parent d-flex gap-2">
-                <img src="asset/svg/thumb-up.svg" alt="folder">
-                <h5 class="card-title mt-auto fw-bold">Mudah</h5>
-              </div>
-              <p class="card-text ms-5">Alur aplikasi mudah dipahami oleh semua kalangan.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- fitur di kiri end -->
-    </div>
-  </div>
-  <!-- solusi end -->
-
-
-  <!-- fitur lainnya -->
-  <div class="container">
-    <div class="row gap-3">
-      <div class="col-lg-5 col-12 col-md-12">
-        <img src="asset/svg/voting@4x 1.svg" alt="vector" class="img-fluid text-md-center">
-      </div>
-
-      <div class="col-lg-6 col-12 col-md-12">
-        <div class="col-10">
-          <h1 class="fw-bolder">Fitur lainnya yang kami miliki</h1>
-        </div>
-        <div class="col-12 mt-3">
-          <ul style="margin-left: -30px;" class="d-flex flex-column gap-3">
-            <li class="list-unstyled fst-italic"><img src="asset/svg/star.svg" alt="star icon" class="me-1" style="margin-top: -8px;"> User tidak akan bisa golput </li>
-            <li class="list-unstyled fst-italic"><img src="asset/svg/star.svg" alt="star icon" class="me-1" style="margin-top: -8px;"> Deteksi status user sudah vote / belum vote </li>
-            <li class="list-unstyled fst-italic"><img src="asset/svg/star.svg" alt="star icon" class="me-1" style="margin-top: -8px;"> Setting voting dari jauh-jauh hari </li>
-            <li class="list-unstyled fst-italic"><img src="asset/svg/star.svg" alt="star icon" class="me-1" style="margin-top: -8px;"> Data hasil voting dapat dilihat kembali </li>
-          </ul>
-        </div>
+        <!-- fitur di kiri end -->
       </div>
     </div>
+    <!-- solusi end -->
 
-  </div>
-  <!-- fitur lainnya end -->
 
-  <!-- Manfaat votingkeun -->
-  <div class="container">
-    <div class="row text-center mt-5 pt-5 mb-5 justify-content-center">
-      <div class="col-12 mt-5 pt-5">
-        <h1 class="fw-bolder">Manfaat Votingkeun</h1>
+    <!-- fitur lainnya -->
+    <div class="container">
+      <div class="row gap-3">
+        <div class="col-lg-5 col-12 col-md-12">
+          <img src="asset/svg/voting@4x 1.svg" alt="vector" class="img-fluid text-md-center">
+        </div>
+
+        <div class="col-lg-6 col-12 col-md-12">
+          <div class="col-10">
+            <h1 class="fw-bolder">Fitur lainnya yang kami miliki</h1>
+          </div>
+          <div class="col-12 mt-3">
+            <ul style="margin-left: -30px;" class="d-flex flex-column gap-3">
+              <li class="list-unstyled fst-italic"><img src="asset/svg/star.svg" alt="star icon" class="me-1"
+                  style="margin-top: -8px;"> User tidak akan bisa golput </li>
+              <li class="list-unstyled fst-italic"><img src="asset/svg/star.svg" alt="star icon" class="me-1"
+                  style="margin-top: -8px;"> Deteksi status user sudah vote / belum vote </li>
+              <li class="list-unstyled fst-italic"><img src="asset/svg/star.svg" alt="star icon" class="me-1"
+                  style="margin-top: -8px;"> Setting voting dari jauh-jauh hari </li>
+              <li class="list-unstyled fst-italic"><img src="asset/svg/star.svg" alt="star icon" class="me-1"
+                  style="margin-top: -8px;"> Data hasil voting dapat dilihat kembali </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- fitur lainnya end -->
+
+    <!-- Manfaat votingkeun -->
+    <div class="container">
+      <div class="row text-center mt-5 pt-5 mb-5 justify-content-center">
+        <div class="col-12 mt-5 pt-5">
+          <h1 class="fw-bolder">Manfaat Votingkeun</h1>
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+
+        <!-- fitur di kiri -->
+        <div class="col-lg-4 col-12 position-relative d-flex flex-column">
+          <h4 class="text-center mb-3 pe-1" style="color: #1E1E1E; opacity: 85%;">Tanpa Votingkeun</h4>
+          <div class="col-11 mx-auto mx-lg-0">
+            <div class="card shadow border-0 rounded-4" style="background-color: #FF6E65;">
+              <div class="card-body">
+                <h5 class="card-title text-light mt-auto fw-bold">Lokasi</h5>
+                <p class="card-text text-light" style="font-size: 19px;">Vote harus dalam tempat yang ditentukan</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-11 mx-auto mx-lg-0 my-5">
+            <div class="card shadow border-0 rounded-4" style="background-color: #FF6E65;">
+              <div class="card-body">
+                <h5 class="card-title text-light mt-auto fw-bold">Rekapitulasi Hasil suara</h5>
+                <p class="card-text text-light" style="font-size: 19px;">Direkap secara manual oleh panitia</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-11 mx-auto mx-lg-0">
+            <div class="card shadow border-0 rounded-4" style="background-color: #FF6E65;">
+              <div class="card-body">
+                <h5 class="card-title text-light mt-auto fw-bold">Arsip Data</h5>
+                <p class="card-text text-light" style="font-size: 19px;">Setelah selesai, biasanya data berceceran</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- fitur di kiri end -->
+
+        <div class="col-2 d-lg-flex flex-column justify-content-center gap-4 d-none">
+          <div class="col-12 mt-5 text-center">
+            <img src="asset/svg/location-1.svg" alt="" style="margin-left: -15px; width: 80px;">
+          </div>
+          <div class="col-12 my-5 text-center">
+            <img src="asset/svg/blackboard.svg" alt="" style="margin-left: -15px; width: 80px;">
+          </div>
+          <div class="col-12 text-center">
+            <img src="asset/svg/files.svg" alt="" style="margin-left: -15px; width: 80px;">
+          </div>
+        </div>
+
+        <!-- fitur di kanan -->
+        <div class="col-lg-4 col-12 position-relative d-flex flex-column">
+          <h4 class="text-center mb-3 pe-lg-4 mt-4 mt-lg-0" style="color: #1E1E1E; opacity: 85%;">Dengan Votingkeun</h4>
+          <div class="col-11 mx-lg-0 mx-auto">
+            <div class="card shadow border-0 rounded-4" style="background: #1B9C5E;">
+              <div class="card-body">
+                <h5 class="card-title text-light mt-auto fw-bold">Lokasi</h5>
+                <p class="card-text text-light" style="font-size: 19px;">Vote bisa dilakukan dimana saja</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-11 my-5 mx-lg-0 mx-auto">
+            <div class="card mt-lg-4 mb-lg-4 shadow border-0 rounded-4" style="background: #1B9C5E;">
+              <div class="card-body">
+                <h5 class="card-title text-light mt-auto fw-bold">Rekapitulasi Hasil suara</h5>
+                <p class="card-text text-light" style="font-size: 19px;">Otomatis direkap oleh aplikasi</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-11 mx-lg-0 mx-auto">
+            <div class="card shadow border-0 rounded-4" style="background: #1B9C5E;">
+              <div class="card-body">
+                <h5 class="card-title text-light mt-auto fw-bold">Arsip Data</h5>
+                <p class="card-text text-light" style="font-size: 19px;">Data masih tersimpan dalam aplikasi ketika
+                  voting selesai</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- fitur di kiri end -->
+
       </div>
     </div>
+    <!-- Manfaat votingkeun end -->
 
-    <div class="row justify-content-center">
-
-      <!-- fitur di kiri -->
-      <div class="col-lg-4 col-12 position-relative d-flex flex-column">
-        <h4 class="text-center mb-3 pe-1" style="color: #1E1E1E; opacity: 85%;">Tanpa Votingkeun</h4>
-        <div class="col-11 mx-auto mx-lg-0">
-          <div class="card shadow border-0 rounded-4" style="background-color: #FF6E65;">
-            <div class="card-body">
-              <h5 class="card-title text-light mt-auto fw-bold">Lokasi</h5>
-              <p class="card-text text-light" style="font-size: 19px;">Vote harus dalam tempat yang ditentukan</p>
-            </div>
-          </div>
+    <!-- jumlah pengguna -->
+    <div class="container">
+      <div class="row text-center">
+        <h1 class="mb-5 fw-bolder">Jumlah pengguna</h1>
+      </div>
+      <div class="row justify-content-center gap-5 gap-lg-0">
+        <div class="col-lg-3 col-md-2 d-flex flex-column text-center">
+          <img src="asset/svg/stats-lines.svg" alt="" class="img-fluid mx-auto" style="width: 90px;">
+          <h2 class="fw-bolder">10</h2>
+          <p class="fw-bold fs-5" style="margin-top: -10px;">Voting Selesai</p>
         </div>
-
-        <div class="col-11 mx-auto mx-lg-0 my-5">
-          <div class="card shadow border-0 rounded-4" style="background-color: #FF6E65;">
-            <div class="card-body">
-              <h5 class="card-title text-light mt-auto fw-bold">Rekapitulasi Hasil suara</h5>
-              <p class="card-text text-light" style="font-size: 19px;">Direkap secara manual oleh panitia</p>
-            </div>
-          </div>
+        <div class="col-lg-3 col-md-2 d-flex flex-column text-center">
+          <img src="asset/svg/building.svg" alt="" class="img-fluid mx-auto" style="width: 90px;">
+          <h2 class="fw-bolder">2</h2>
+          <p class="fw-bold fs-5" style="margin-top: -10px;">Instansi</p>
         </div>
-
-        <div class="col-11 mx-auto mx-lg-0">
-          <div class="card shadow border-0 rounded-4" style="background-color: #FF6E65;">
-            <div class="card-body">
-              <h5 class="card-title text-light mt-auto fw-bold">Arsip Data</h5>
-              <p class="card-text text-light" style="font-size: 19px;">Setelah selesai, biasanya data berceceran</p>
-            </div>
-          </div>
+        <div class="col-lg-3 col-md-2 d-flex flex-column text-center">
+          <img src="asset/svg/person-boy.svg" alt="" class="img-fluid mx-auto" style="width: 90px;">
+          <h2 class="fw-bolder">3200</h2>
+          <p class="fw-bold fs-5" style="margin-top: -10px;">Pengguna aplikasi
+          <p>
         </div>
       </div>
-      <!-- fitur di kiri end -->
+    </div>
+    <!-- jumlah pengguna END -->
 
-      <div class="col-2 d-lg-flex flex-column justify-content-center gap-4 d-none">
-        <div class="col-12 mt-5 text-center">
-          <img src="asset/svg/location-1.svg" alt="" style="margin-left: -15px; width: 80px;">
+    <!-- kesan mereka -->
+    <div class="container">
+      <div class="row text-center">
+        <h1 class="fw-bolder">Bagaimana kesan mereka?</h1>
+      </div>
+
+      <div id="carouselExampleControls" class="carousel">
+        <div class="carousel-inner gap-md-3 gap-lg-0">
+
+          <div class="carousel-item active">
+            <div class="card border-0" style="height: 401px;">
+              <img src="asset/images/person1 kesan.png" class="mx-auto mt-4" alt="asset/images/person1 kesan.png"
+                style="width: 108px; border-radius: 100%;">
+              <div class="card-body text-center">
+                <h4 class="card-title fw-bolder">Ade Roni</h4>
+                <h5 class="card-title text-warning" style="margin-top: -5px; margin-bottom: 5px;">Guru</h5>
+                <p class="card-text">“Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in
+                  a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock”
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="card border-0" style="height: 401px;">
+              <img src="asset/images/person2 kesan.png" class="mx-auto mt-4" alt="asset/images/person2 kesan.png"
+                style="width: 108px; border-radius: 100%;">
+              <div class="card-body text-center">
+                <h4 class="card-title fw-bolder">Ade Roni</h4>
+                <h5 class="card-title text-warning" style="margin-top: -5px; margin-bottom: 5px;">Guru</h5>
+                <p class="card-text">“Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in
+                  a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock”
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="card border-0" style="height: 401px;">
+              <img src="asset/images/person3 kesan.png" class="mx-auto mt-4" alt="asset/images/person3 kesan.png"
+                style="width: 108px; border-radius: 100%;">
+              <div class="card-body text-center">
+                <h4 class="card-title fw-bolder">Ade Roni</h4>
+                <h5 class="card-title text-warning" style="margin-top: -5px; margin-bottom: 5px;">Guru</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                  card's content.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="card border-0" style="height: 401px;">
+              <img src="asset/images/person1 kesan.png" class="mx-auto mt-4" alt="asset/images/person1 kesan.png"
+                style="width: 108px; border-radius: 100%;">
+              <div class="card-body text-center">
+                <h4 class="card-title fw-bolder">Ade Roni</h4>
+                <h5 class="card-title text-warning" style="margin-top: -5px; margin-bottom: 5px;">Guru</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                  card's content.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="card border-0" style="height: 401px;">
+              <img src="asset/images/person2 kesan.png" class="mx-auto mt-4" alt="asset/images/person2 kesan.png"
+                style="width: 108px; border-radius: 100%;">
+              <div class="card-body text-center">
+                <h4 class="card-title fw-bolder">Ade Roni</h4>
+                <h5 class="card-title text-warning" style="margin-top: -5px; margin-bottom: 5px;">Guru</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                  card's content.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="card border-0" style="height: 401px;">
+              <img src="asset/images/person3 kesan.png" class="mx-auto mt-4" alt="asset/images/person3 kesan.png"
+                style="width: 108px; border-radius: 100%;">
+              <div class="card-body text-center">
+                <h4 class="card-title fw-bolder">Ade Roni</h4>
+                <h5 class="card-title text-warning" style="margin-top: -5px; margin-bottom: 5px;">Guru</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                  card's content.</p>
+              </div>
+            </div>
+          </div>
+
         </div>
-        <div class="col-12 my-5 text-center">
-          <img src="asset/svg/blackboard.svg" alt="" style="margin-left: -15px; width: 80px;">
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+    <!-- kesan mereka end -->
+
+    <!-- didukung oleh -->
+    <div class="container">
+      <div class="row text-center">
+        <h1 class="fw-bolder">Didukung oleh</h1>
+      </div>
+
+      <div class="row mt-5 justify-content-center gap-4">
+        <div class="col-lg-2 col-12 col-md-3 text-center">
+          <img src="asset/images/Logo PPLG 1.png" alt="PPLG">
         </div>
+
+        <div class="col-lg-2 col-12 col-md-3 text-center">
+          <img src="asset/images/Logo STT YBSI 1.png" alt="STT YBSI">
+        </div>
+
+        <div class="col-lg-2 col-12 col-md-3 text-center">
+          <img src="asset/images/Asset_1_4x-removebg-preview 1.png" alt="KODINGKEUN">
+        </div>
+
         <div class="col-12 text-center">
-          <img src="asset/svg/files.svg" alt="" style="margin-left: -15px; width: 80px;">
+          <img src="asset/images/Meniti 1.png" alt="MENITI ID">
         </div>
-      </div>
-
-      <!-- fitur di kanan -->
-      <div class="col-lg-4 col-12 position-relative d-flex flex-column">
-        <h4 class="text-center mb-3 pe-lg-4 mt-4 mt-lg-0" style="color: #1E1E1E; opacity: 85%;">Dengan Votingkeun</h4>
-        <div class="col-11 mx-lg-0 mx-auto">
-          <div class="card shadow border-0 rounded-4" style="background: #1B9C5E;">
-            <div class="card-body">
-              <h5 class="card-title text-light mt-auto fw-bold">Lokasi</h5>
-              <p class="card-text text-light" style="font-size: 19px;">Vote bisa dilakukan dimana saja</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-11 my-5 mx-lg-0 mx-auto">
-          <div class="card mt-lg-4 mb-lg-4 shadow border-0 rounded-4" style="background: #1B9C5E;">
-            <div class="card-body">
-              <h5 class="card-title text-light mt-auto fw-bold">Rekapitulasi Hasil suara</h5>
-              <p class="card-text text-light" style="font-size: 19px;">Otomatis direkap oleh aplikasi</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-11 mx-lg-0 mx-auto">
-          <div class="card shadow border-0 rounded-4" style="background: #1B9C5E;">
-            <div class="card-body">
-              <h5 class="card-title text-light mt-auto fw-bold">Arsip Data</h5>
-              <p class="card-text text-light" style="font-size: 19px;">Data masih tersimpan dalam aplikasi ketika voting selesai</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- fitur di kiri end -->
-
-    </div>
-  </div>
-  <!-- Manfaat votingkeun end -->
-
-  <!-- jumlah pengguna -->
-  <div class="container">
-    <div class="row text-center">
-      <h1 class="mb-5 fw-bolder">Jumlah pengguna</h1>
-    </div>
-    <div class="row justify-content-center gap-5 gap-lg-0">
-      <div class="col-lg-3 col-md-2 d-flex flex-column text-center">
-        <img src="asset/svg/stats-lines.svg" alt="" class="img-fluid mx-auto" style="width: 90px;">
-        <h2 class="fw-bolder">10</h2>
-        <p class="fw-bold fs-5" style="margin-top: -10px;">Voting Selesai</p>
-      </div>
-      <div class="col-lg-3 col-md-2 d-flex flex-column text-center">
-        <img src="asset/svg/building.svg" alt="" class="img-fluid mx-auto" style="width: 90px;">
-        <h2 class="fw-bolder">2</h2>
-        <p class="fw-bold fs-5" style="margin-top: -10px;">Instansi</p>
-      </div>
-      <div class="col-lg-3 col-md-2 d-flex flex-column text-center">
-        <img src="asset/svg/person-boy.svg" alt="" class="img-fluid mx-auto" style="width: 90px;">
-        <h2 class="fw-bolder">3200</h2>
-        <p class="fw-bold fs-5" style="margin-top: -10px;">Pengguna aplikasi<p>
       </div>
     </div>
-  </div>
-  <!-- jumlah pengguna END -->
+    <!-- didukung oleh End -->
 
-  <!-- kesan mereka -->
-  <div class="container">
-    <div class="row text-center">
-      <h1 class="fw-bolder">Bagaimana kesan mereka?</h1>
-    </div>
+    <!-- FAQ -->
+    <div class="container">
+      <div class="row text-center">
+        <h1 class="fw-bolder">FAQ</h1>
+      </div>
 
-    <div id="carouselExampleControls" class="carousel">
-      <div class="carousel-inner gap-md-3 gap-lg-0">
-
-        <div class="carousel-item active">
-          <div class="card border-0" style="height: 401px;">
-            <img src="asset/images/person1 kesan.png" class="mx-auto mt-4"  alt="asset/images/person1 kesan.png" style="width: 108px; border-radius: 100%;">
-            <div class="card-body text-center">
-              <h4 class="card-title fw-bolder">Ade Roni</h4>
-              <h5 class="card-title text-warning" style="margin-top: -5px; margin-bottom: 5px;">Guru</h5>
-              <p class="card-text">“Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock”
-              </p>
+      <div class="accordion pb-5" id="accordionExample">
+        <div class="accordion-item mt-3 mx-auto">
+          <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed fs-5" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseOne" aria-expanded="false" id="accordionButton">
+              Apa itu votingkeun?
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse shadow" aria-labelledby="headingThree"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse
+              plugin adds the appropriate classes that we use to style each element. These classes control the overall
+              appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom
+              CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the
+              <code>.accordion-body</code>, though the transition does limit overflow.
             </div>
           </div>
         </div>
-
-        <div class="carousel-item">
-          <div class="card border-0" style="height: 401px;">
-            <img src="asset/images/person2 kesan.png" class="mx-auto mt-4" alt="asset/images/person2 kesan.png" style="width: 108px; border-radius: 100%;">
-            <div class="card-body text-center">
-              <h4 class="card-title fw-bolder">Ade Roni</h4>
-              <h5 class="card-title text-warning" style="margin-top: -5px; margin-bottom: 5px;">Guru</h5>
-              <p class="card-text">“Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock”</p>
+        <div class="accordion-item mt-3 mx-auto">
+          <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed fs-5" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseTwo" aria-expanded="false" id="accordionButton">
+              Mengapa harus menggunakan Votingkeun?
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse shadow" aria-labelledby="headingThree"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse
+              plugin adds the appropriate classes that we use to style each element. These classes control the overall
+              appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom
+              CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the
+              <code>.accordion-body</code>, though the transition does limit overflow.
             </div>
           </div>
         </div>
-        
-        <div class="carousel-item">
-          <div class="card border-0" style="height: 401px;">
-            <img src="asset/images/person3 kesan.png" class="mx-auto mt-4"  alt="asset/images/person3 kesan.png" style="width: 108px; border-radius: 100%;">
-            <div class="card-body text-center">
-              <h4 class="card-title fw-bolder">Ade Roni</h4>
-              <h5 class="card-title text-warning" style="margin-top: -5px; margin-bottom: 5px;">Guru</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <div class="accordion-item mt-3 mx-auto">
+          <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed fs-5" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseThree" aria-expanded="false" id="accordionButton">
+              Keuntungan menggunakan Votingkeun?
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse shadow" aria-labelledby="headingThree"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse
+              plugin adds the appropriate classes that we use to style each element. These classes control the overall
+              appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom
+              CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the
+              <code>.accordion-body</code>, though the transition does limit overflow.
             </div>
           </div>
         </div>
-
-        <div class="carousel-item">
-          <div class="card border-0" style="height: 401px;">
-            <img src="asset/images/person1 kesan.png" class="mx-auto mt-4"  alt="asset/images/person1 kesan.png" style="width: 108px; border-radius: 100%;">
-            <div class="card-body text-center">
-              <h4 class="card-title fw-bolder">Ade Roni</h4>
-              <h5 class="card-title text-warning" style="margin-top: -5px; margin-bottom: 5px;">Guru</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <div class="accordion-item mt-3 mx-auto">
+          <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed fs-5" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseFour" aria-expanded="false" id="accordionButton">
+              Bagaimana agar saya dapat menggunakan jasa Votingkeun?
+            </button>
+          </h2>
+          <div id="collapseFour" class="accordion-collapse collapse shadow" aria-labelledby="headingThree"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse
+              plugin adds the appropriate classes that we use to style each element. These classes control the overall
+              appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom
+              CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the
+              <code>.accordion-body</code>, though the transition does limit overflow.
             </div>
-          </div>
-        </div>
-
-        <div class="carousel-item">
-          <div class="card border-0" style="height: 401px;">
-            <img src="asset/images/person2 kesan.png" class="mx-auto mt-4"  alt="asset/images/person2 kesan.png" style="width: 108px; border-radius: 100%;">
-            <div class="card-body text-center">
-              <h4 class="card-title fw-bolder">Ade Roni</h4>
-              <h5 class="card-title text-warning" style="margin-top: -5px; margin-bottom: 5px;">Guru</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-          </div>
-        </div>
-        
-        <div class="carousel-item">
-          <div class="card border-0" style="height: 401px;">
-            <img src="asset/images/person3 kesan.png" class="mx-auto mt-4"  alt="asset/images/person3 kesan.png" style="width: 108px; border-radius: 100%;">
-            <div class="card-body text-center">
-              <h4 class="card-title fw-bolder">Ade Roni</h4>
-              <h5 class="card-title text-warning" style="margin-top: -5px; margin-bottom: 5px;">Guru</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
-  </div>
-  <!-- kesan mereka end -->
-
-  <!-- didukung oleh -->
-  <div class="container">
-    <div class="row text-center">
-      <h1 class="fw-bolder">Didukung oleh</h1>
-    </div>
-
-    <div class="row mt-5 justify-content-center gap-4">
-      <div class="col-lg-2 col-12 col-md-3 text-center">
-        <img src="asset/images/Logo PPLG 1.png" alt="PPLG">
-      </div>
-      
-      <div class="col-lg-2 col-12 col-md-3 text-center">
-        <img src="asset/images/Logo STT YBSI 1.png" alt="STT YBSI">
-      </div>
-
-      <div class="col-lg-2 col-12 col-md-3 text-center">
-        <img src="asset/images/Asset_1_4x-removebg-preview 1.png" alt="KODINGKEUN">
-      </div>
-
-      <div class="col-12 text-center">
-        <img src="asset/images/Meniti 1.png" alt="MENITI ID">
-      </div>
-    </div>
-  </div>
-  <!-- didukung oleh End -->
-
-  <!-- FAQ -->
-  <div class="container">
-    <div class="row text-center">
-      <h3>FAQ</h3>
-    </div>
-
-    <div class="accordion pb-5" id="accordionExample">
-      <div class="accordion-item mt-3 mx-auto">
-        <h2 class="accordion-header" id="headingThree">
-          <button class="accordion-button collapsed fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" id="accordionButton">
-            Apa itu votingkeun?
-          </button>
-        </h2>
-        <div id="collapseOne" class="accordion-collapse collapse shadow" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-          <div class="accordion-body">
-            <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-          </div>
-        </div>
-      </div>
-      <div class="accordion-item mt-3 mx-auto">
-        <h2 class="accordion-header" id="headingThree">
-          <button class="accordion-button collapsed fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" id="accordionButton">
-            Mengapa harus menggunakan Votingkeun?
-          </button>
-        </h2>
-        <div id="collapseTwo" class="accordion-collapse collapse shadow" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-          <div class="accordion-body">
-            <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-          </div>
-        </div>
-      </div>
-      <div class="accordion-item mt-3 mx-auto">
-        <h2 class="accordion-header" id="headingThree">
-          <button class="accordion-button collapsed fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" id="accordionButton">
-            Keuntungan menggunakan Votingkeun?
-          </button>
-        </h2>
-        <div id="collapseThree" class="accordion-collapse collapse shadow" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-          <div class="accordion-body">
-            <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-          </div>
-        </div>
-      </div>
-      <div class="accordion-item mt-3 mx-auto">
-        <h2 class="accordion-header" id="headingThree">
-          <button class="accordion-button collapsed fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" id="accordionButton">
-            Bagaimana agar saya dapat menggunakan jasa Votingkeun?
-          </button>
-        </h2>
-        <div id="collapseFour" class="accordion-collapse collapse shadow" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-          <div class="accordion-body">
-            <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <!-- FAQ end -->
+    <!-- FAQ end -->
 
-  <!-- footer -->
-  <div class="container-fluid m-0 p-0">
-    <div class="row justify-content-center footer-hero">
-      <div class="col-lg-6 col-11 col-md-8 text-center rounded-4 text-light p-4" style="background-color: #2A3E63; margin-top: -100px; box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.25);">
-        <h3 class="fw-bolder">Mau pakai Votingkeun sekarang?</h3>
-        <p class="fs-5">Request Demo untuk pelajari lebih lanjut tentang Votingkeun</p>
-        <button class="btn btn-warning" style="width: 180px; height: 50px; font-size: 20px; line-height: 10px;">Akun Demo</button>
-      </div>
-
-      <div class="row justify-content-center gap-lg-0 gap-5" style="margin-top: 100px; margin-bottom: 100px;">
-        <div class="col-lg-3 col-12 col-md-4 text-center d-flex flex-column gap-3 px-5">
-          <p class="fw-bold text-light" style="font-size: 23px;">Kontak</p>
-          <a href="" class="btn btn-outline-light rounded-4" style="margin-top: -16px;">+62 813 882 741 88</a>
-          <a href="" class="btn btn-outline-light rounded-4">info@votingkeun.my.id</a>
+    <!-- footer -->
+    <div class="container-fluid m-0 p-0">
+      <div class="row justify-content-center footer-hero">
+        <div class="col-lg-6 col-11 col-md-8 text-center rounded-4 text-light p-4"
+          style="background-color: #2A3E63; margin-top: -100px; box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.25);">
+          <h3 class="fw-bolder">Mau pakai Votingkeun sekarang?</h3>
+          <p class="fs-5">Request Demo untuk pelajari lebih lanjut tentang Votingkeun</p>
+          <button class="btn btn-warning" style="width: 180px; height: 50px; font-size: 20px; line-height: 10px;">Akun
+            Demo</button>
         </div>
-        <div class="col-lg-3 col-12 col-md-4 text-center text-light">
-          <p class="fw-bold" style="font-size: 23px;">Alamat</p>
-          <p style="font-size: 20px; margin-top: -5px;">Jl. Cieunteung, Cilembang, <br> Kec. Cihideung, <br> Tasikmalaya, Jawa Barat</p>
-        </div>
-      </div>
 
-      <div class="row justify-content-center text-center" style="padding-bottom: 50px;">
+        <div class="row justify-content-center gap-lg-0 gap-5" style="margin-top: 100px; margin-bottom: 100px;">
+          <div class="col-lg-3 col-12 col-md-4 text-center d-flex flex-column gap-3 px-5">
+            <p class="fw-bold text-light" style="font-size: 23px;">Kontak</p>
+            <a href="" class="btn btn-outline-light rounded-4" style="margin-top: -16px;">+62 813 882 741 88</a>
+            <a href="" class="btn btn-outline-light rounded-4">info@votingkeun.my.id</a>
+          </div>
+          <div class="col-lg-3 col-12 col-md-4 text-center text-light">
+            <p class="fw-bold" style="font-size: 23px;">Alamat</p>
+            <p style="font-size: 20px; margin-top: -5px;">Jl. Cieunteung, Cilembang, <br> Kec. Cihideung, <br>
+              Tasikmalaya, Jawa Barat</p>
+          </div>
+        </div>
+
+        <div class="row justify-content-center text-center" style="padding-bottom: 50px;">
           <p class="fw-bold text-light" style="font-size: 23px">Social media</p>
           <div class="col-lg-1 col-5 text-end">
             <a href="">
@@ -542,18 +672,20 @@
               <img src="asset/svg/whatsapp.svg" alt="instagram" class="img-fluid">
             </a>
           </div>
-      </div>
+        </div>
 
-      <div class="row w-100" style="height: 10px; background: #DBAB00;"></div>
-      <div class="row w-100 text-center" style="background: #1B2434;">
-        <p class="text-light" style="font-size: 18px; font-weight: 500; margin-top: 10px;">© 2022 Powered by Votingkeun Indonesia</p>
+        <div class="row w-100" style="height: 10px; background: #DBAB00;"></div>
+        <div class="row w-100 text-center" style="background: #1B2434;">
+          <p class="text-light" style="font-size: 18px; font-weight: 500; margin-top: 10px;">© 2022 Powered by
+            Votingkeun Indonesia</p>
+        </div>
       </div>
     </div>
-  </div>
-  <!-- footer END -->
+    <!-- footer END -->
 
-  <script src="asset/jquery/dist/jquery.min.js"></script>
-  <script src="asset/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="asset/js/votingkeun-landing-page.js"></script>
+    <script src="asset/jquery/dist/jquery.min.js"></script>
+    <script src="asset/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="asset/js/votingkeun-landing-page.js"></script>
 </body>
+
 </html>

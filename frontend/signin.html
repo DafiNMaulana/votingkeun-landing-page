@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="rgba(27, 36, 52, 1)">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar akun - Votingkeun</title>
+    <link rel="icon" type="image/x-icon" href="../asset/images/votingkeun-logo.png">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="../asset/bootstrap/dist/css/bootstrap.css">
+    <!-- style -->
+    <link rel="stylesheet" href="../asset/style/votingkeun-landing-page.css">
+</head>
+<body style="background: #4667A4;">
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg bg-transparent" id="navbar">
+      <div class="container">
+        <img src="../asset/images/Navbar brand.png" alt="Votingkeun brand" class="d-md-none" width="150" /> 
+        <!-- <a href="signin.html" class="btn btn-warning d-md-none d-block"> <img src="../asset/svg/person-fill.svg" alt=""> sign in</a> -->
+        <!-- <div class="dropdown d-flex d-lg-none gap-2" style="margin-bottom: -15px;">
+            <img src="../asset/svg/person-fill.svg" alt="" class="bg-warning d-block rounded-circle p-1 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="width: 30px; height: 30px; margin-top: 3px;"> 
+            <p class="text-light" style="margin-top: 6px;">Hi, Icikiwir!</p>
+            <ul class="dropdown-menu animate slideIn border-0 rounded-0 bg-warning" style="margin-top: -4px;">
+              <li><a class="dropdown-item text-dark dropdown-account" href="#"> <img src="../asset/svg/logout.svg" alt="logout" style="width: 20px; margin-bottom: 3px;"> Logout</a></li>
+            </ul>
+        </div> -->
+        <a class="navbar-brand d-none d-md-block" href="#">
+           <img src="../asset/images/Navbar brand.png" alt="Votingkeun brand" width="150" /> 
+          </a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <a class="offcanvas-title" id="offcanvasNavbarLabel">
+              <img src="../asset/images/Navbar brand.png" alt="Votingkeun brand" width="150" /> 
+            </a>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end gap-lg-2 flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="../index.html">Beranda</a>
+              </li>
+              <!-- <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Fitur
+                </a>
+                <ul class="dropdown-menu animate slideIn border-0 rounded-0" style="background: rgba(27, 36, 52,1);">
+                  <li><a class="dropdown-item text-light" href="fitur.html">Fitur</a></li>
+                  <li><a class="dropdown-item text-light" href="#">Harga</a></li>
+                </ul>
+              </li> -->
+              <li class="nav-item">
+                <a class="nav-link" href="harga.html">Harga</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="artikel.html">Artikel</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="kontak.html">Kontak</a>
+              </li>
+              <li class="nav-item dropdown d-none d-lg-inline-none" style="margin-right: -70px;">
+                <a href="signin.html" class="btn btn-warning"> <img src="../asset/svg/person-fill.svg" alt=""> sign in</a>
+                  <!-- <img src="../asset/svg/person-fill.svg" alt="" class="bg-warning d-block rounded-circle p-1 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="width: 30px; height: 30px; margin-top: 3px;"> 
+                  <ul class="dropdown-menu animate slideIn border-0 rounded-0 bg-warning" style="margin-left: -100px;">
+                    <li><a class="dropdown-item text-dark dropdown-account disabled" href="fitur.html">Hi, Icikiwir !</a></li>
+                    <li><a class="dropdown-item text-dark dropdown-account" href="#">Logout</a></li>
+                  </ul> -->
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav> <!-- end navbar -->  
+
+    <!-- main content -->
+    <div class="container">
+        <div class="row p-lg-5 p-3 py-5 my-5 mx-lg-0 mx-2 mx-auto position-relative rounded-2 signin-box" style="background-color: #12274B; box-shadow: 1px 9px 18px 3px rgba(0, 0, 0, 0.45);">
+            <div class="col-lg-6 col-12 my-auto">
+                <h5 class="text-light" style="font-weight: 500; font-size: 30px;">Selamat datang</h5>
+                <p class="text-light" style="font-weight: 400; font-size: 16px; line-height: 18px; letter-spacing: .5px;">Silahkan masukan informasi anda terlebih dahulu</p>
+
+                <form class="needs-validation" novalidate>
+                    <div class="mb-3">
+                      <label for="email" class="form-label text-light">Email</label>
+                      <input type="email" 
+                      class="form-control bg-transparent" 
+                      id="email" 
+                      aria-describedby="emailHelp" 
+                      style="
+                      max-width: 334px; 
+                      border: 1px solid #5D759F; 
+                      margin-top: -5px; 
+                      font-size: 15px; color: #fff;" 
+                      placeholder="Ajidsolehudin@mail.com" required>
+                      <div class="invalid-feedback">
+                        Kolom email harus diisi !
+                      </div>
+                    </div>
+
+                    <div class="mb-3">
+                      <label for="password" class="form-label text-light">Password</label>
+                      <input type="password" 
+                      class="form-control bg-transparent" 
+                      id="password" 
+                      style="
+                      max-width: 334px; 
+                      border: 1px solid #5D759F; 
+                      margin-top: -5px; 
+                      font-size: 15px; color: #fff;" 
+                      placeholder="********" required>
+                      <div class="invalid-feedback">
+                        Kolom password harus di isi !
+                      </div>
+                    </div>
+
+                    <div class="mb-3">
+                      <label for="confirmPassword" class="form-label text-light">Confirm password</label>
+                      <input type="password" 
+                      class="form-control bg-transparent" 
+                      id="confirmPassword" 
+                      style="
+                      max-width: 334px; 
+                      border: 1px solid #5D759F; 
+                      margin-top: -5px; 
+                      color: #fff;" 
+                      placeholder="********" required>
+                      <div class="invalid-feedback">
+                        Kolom Confirm password harus di isi !
+                      </div>
+                      <div id="emailHelp" class="form-text my-3 text-end" style="max-width: 334px;">
+                        <a href="login.html" class="text-decoration-none text-light">Udah punya akun ?</a>
+                      </div>
+                    </div>
+
+                    <div class="btn-submit" style="max-width: 334px;">
+                      <button type="submit" class="btn signin-btn w-100">Daftar sekarang</button>
+                      <div class="d-flex align-center flex-row justify-content-center" style="height: 35px; max-width: 334px;">
+                          <span class="my-auto" 
+                          style="display:block; 
+                          border-top: 1px solid #5D759F; 
+                          width: 77px; height: 1px;"></span> 
+                              <p class="my-auto mx-1 text-light"> Atau </p>
+                          <span class="my-auto" 
+                          style="display:block; 
+                          border-top: 1px solid #5D759F; 
+                          width: 77px; height: 1px;"></span> 
+                      </div>
+                      <button type="submit" class="btn google-btn w-100"> <img src="../asset/images/google.png" alt="google logo" style="width: 23px; margin-top: -5px;"> Daftar dengan Google</button>
+                    </div>
+                  </form>
+            </div>
+            <div id="carouselExampleInterval" class="carousel slide position-absolute d-none d-md-none d-lg-block" data-bs-ride="carousel" style="width: 568px; right: 0; top: 0; bottom: 0;">
+                <div class="carousel-indicators mb-5">
+                    <button type="button" 
+                    data-bs-target="#carouselExampleDark" 
+                    data-bs-slide-to="0" 
+                    class="active rounded-circle" 
+                    aria-current="true" 
+                    aria-label="Slide 1"
+                    style="width: 10px; height: 10px;"></button>
+
+                    <button type="button" 
+                    data-bs-target="#carouselExampleDark" 
+                    data-bs-slide-to="1" 
+                    aria-label="Slide 2 " 
+                    class="rounded-circle"
+                    style="width: 10px; height: 10px;"></button>
+                    </div>
+                <div class="carousel-inner w-100 position-absolute end-0 top-0 bottom-0" style="border-radius: 0 5px 5px 0;">
+                    <div class="carousel-item active" data-bs-interval="5000">
+                        <img src="../asset/images/signin-slide1.png" class="d-block w-100" alt="../asset/images/signin-slide1.png">
+                        <div class="carousel-caption d-none d-md-block position-absolute top-0 end-0 text-end pe-4">
+                        <h5 style="
+                        font-weight: 700;
+                        font-size: 30px;">Pemilu online</h5>
+                        <p style="
+                        font-weight: 400;
+                        font-size: 20px;">Di Estonia, pemilu di laksanakan secara <br>
+                        Online sejak tahun 2005 !</p>
+                        </div>
+                        <div class="carousel-caption d-none d-md-block position-absolute start-0 text-start ps-4" style="margin-bottom: 90px;">
+                        <h5 style="
+                        font-weight: 700;
+                        font-size: 30px;">Golput</h5>
+                        <p style="
+                        font-weight: 400;
+                        font-size: 20px;">Di Australia, jika anda melakukan golput <br>
+                        anda akan di denda</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-bs-interval="5000">
+                    <img src="../asset/images/signin-slide2.png" class="d-block w-100" alt="../asset/images/signin-slide2.png">
+                    <div class="carousel-caption d-none d-md-block position-absolute top-0 end-0 text-end pe-4">
+                      <h5 style="
+                      font-weight: 700;
+                      font-size: 30px;">Pemilu di korut</h5>
+                      <p style="
+                      font-weight: 400;
+                      font-size: 20px;">Korea utara juga melakukan <br>
+                      pemilu coy !</p>
+                    </div>
+                    <div class="carousel-caption d-none d-md-block position-absolute start-0 text-start ps-4" style="margin-bottom: 130px;">
+                      <h5 style="
+                      font-weight: 700;
+                      font-size: 30px;">Pemilu di masa order baru</h5>
+                      <p style="
+                      font-weight: 400;
+                      font-size: 20px;">Di masa orde baru, pemilu presiden berlangsung 6 kali
+                      dan beliau memenangkan nya berturut turut</p>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <!-- main content END -->
+
+    <!-- footer -->
+      <p class="text-light m-3">© 2022 Powered by Votingkeun Indonesia</p>
+    <!-- footer END -->
+
+    <script src="../asset/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script>// Example starter JavaScript for disabling form submissions if there are invalid fields
+        (() => {
+          'use strict'
+        
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+          const forms = document.querySelectorAll('.needs-validation')
+        
+          // Loop over them and prevent submission
+          Array.from(forms).forEach(form => {
+            form.addEventListener('submit', event => {
+              if (!form.checkValidity()) {
+                event.preventDefault()
+                event.stopPropagation()
+              }
+        
+              form.classList.add('was-validated')
+            }, false)
+          })
+        })()
+    </script>
+</body>
+</html>

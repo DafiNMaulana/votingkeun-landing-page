@@ -12,15 +12,80 @@
     <link rel="stylesheet" href="../asset/bootstrap/dist/css/bootstrap.css">
     <!-- style -->
     <link rel="stylesheet" href="../asset/style/votingkeun-landing-page.css">
+
+    <style>
+        @media (min-width: 768px) {
+            .carousel-inner {
+                display: flex;
+            }
+
+            .carousel-item {
+                margin-right: 0;
+                flex: 0 0 33.333333%;
+                display: block;
+            }
+        }
+
+        .carousel-inner {
+            padding: 1em;
+        }
+
+        .card {
+            margin: 0 auto;
+            box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+            border: none;
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            background-color: #e1e1e1;
+            width: 6vh;
+            height: 6vh;
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        @media (max-width: 992px) {
+
+            .carousel-control-prev,
+            .carousel-control-next {
+                width: 60px;
+                height: 60px;
+            }
+        }
+
+        .carousel-item>.card {
+            box-shadow: 2px 3px 15px rgba(0, 0, 0, 0.25);
+            width: 312px;
+            /* height: 401px; */
+            border-radius: 19px;
+        }
+
+        @media (max-width: 576px) {
+            .carousel-item>.card {
+                width: auto;
+            }
+        }
+    </style>
 </head>
 
 <body>
-
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg fixed-top" id="navbar" style="background-color: rgba(27, 36, 52,1);">
         <div class="container">
-            <a class="navbar-brand" href="#"> <img src="../asset/images/Navbar brand.png" alt="Votingkeun brand"
-                    width="150" /> </a>
+            <a href="signin.html" class="btn btn-warning d-md-none d-block"> <img src="../asset/svg/person-fill.svg"
+                    alt=""> sign in</a>
+            <!-- <div class="dropdown d-flex d-lg-none gap-2" style="margin-bottom: -15px;">
+            <img src="../asset/svg/person-fill.svg" alt="" class="bg-warning d-block rounded-circle p-1 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="width: 30px; height: 30px; margin-top: 3px;"> 
+            <p class="text-light" style="margin-top: 6px;">Hi, Icikiwir!</p>
+            <ul class="dropdown-menu animate slideIn border-0 rounded-0 bg-warning" style="margin-top: -4px;">
+              <li><a class="dropdown-item text-dark dropdown-account" href="#"> <img src="../asset/svg/logout.svg" alt="logout" style="width: 20px; margin-bottom: 3px;"> Logout</a></li>
+            </ul>
+        </div> -->
+            <a class="navbar-brand d-none d-md-block" href="#">
+                <img src="../asset/images/Navbar brand.png" alt="Votingkeun brand" width="150" />
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
                 aria-controls="offcanvasNavbar">
                 <span></span>
@@ -30,25 +95,25 @@
             <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
                 aria-labelledby="offcanvasNavbarLabel">
                 <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel"></h5>
+                    <a class="offcanvas-title" id="offcanvasNavbarLabel">
+                        <img src="../asset/images/Navbar brand.png" alt="Votingkeun brand" width="150" />
+                    </a>
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-end gap-lg-2 flex-grow-1 pe-3">
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="../index.html">Beranda</a>
+                            <a class="nav-link" aria-current="page" href="#">Beranda</a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Fitur
-                            </a>
-                            <ul class="dropdown-menu animate slideIn border-0 rounded-0"
-                                style="background: rgba(27, 36, 52,1);">
-                                <li><a class="dropdown-item text-light" href="frontend/fitur.html">Fitur</a></li>
-                                <li><a class="dropdown-item text-light" href="#">Harga</a></li>
-                            </ul>
-                        </li>
+                        <!-- <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Fitur
+                </a>
+                <ul class="dropdown-menu animate slideIn border-0 rounded-0" style="background: rgba(27, 36, 52,1);">
+                  <li><a class="dropdown-item text-light" href="fitur.html">Fitur</a></li>
+                  <li><a class="dropdown-item text-light" href="#">Harga</a></li>
+                </ul>
+              </li> -->
                         <li class="nav-item">
                             <a class="nav-link" href="harga.html">Harga</a>
                         </li>
@@ -58,6 +123,15 @@
                         <li class="nav-item">
                             <a class="nav-link" href="kontak.html">Kontak</a>
                         </li>
+                        <li class="nav-item dropdown d-none d-lg-inline-block" style="margin-right: -70px;">
+                            <a href="signin.html" class="btn btn-warning"> <img src="../asset/svg/person-fill.svg"
+                                    alt=""> sign in</a>
+                            <!-- <img src="../asset/svg/person-fill.svg" alt="" class="bg-warning d-block rounded-circle p-1 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="width: 30px; height: 30px; margin-top: 3px;"> 
+                  <ul class="dropdown-menu animate slideIn border-0 rounded-0 bg-warning" style="margin-left: -100px;">
+                    <li><a class="dropdown-item text-dark dropdown-account disabled" href="fitur.html">Hi, Icikiwir !</a></li>
+                    <li><a class="dropdown-item text-dark dropdown-account" href="#">Logout</a></li>
+                  </ul> -->
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -66,7 +140,7 @@
 
     <!-- header -->
     <div class="container">
-        <div class="row" style="margin-top: 150px;">
+        <div class="row" style="margin-top: 100px;">
             <div class="col-lg-12">
                 <h1 style="font-weight: 500; font-size: 48px;">Tata cara voting yang sah menurut hukum indonesia</h1>
             </div>
@@ -163,185 +237,217 @@
             <h5 class="fw-bolder">Artikel lainnya</h5>
         </div>
         <div id="carouselExampleControls" class="carousel">
-          <div class="carousel-inner gap-md-4 gap-lg-0">
-    
-            <div class="carousel-item active">
-              <div class="card"
-                    style="border: 2px solid rgba(27, 36, 52, 0.38);box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25); border-radius: 19px;">
-                    <div class="w-100 d-flex justify-content-between py-2 px-2">
-                        <div class="user d-flex">
-                            <img src="../asset/svg/person-fill.svg" alt="person">
-                            <p class="my-auto" style="color: rgba(30, 30, 30, 0.7); font-size: 13px; margin-left: 4px;">
-                                Admin</p>
-                        </div>
-                        <div class="user d-flex">
-                            <img src="../asset/svg/calendar3.svg" alt="Calendar">
-                            <p class="my-auto" style="color: rgba(30, 30, 30, 0.7); font-size: 13px; margin-left: 4px;">
-                                01 Desember 2022</p>
-                        </div>
-                    </div>
-                    <img src="../asset/images/no image.png" alt="no image" class="card-img-top px-2">
-                    <h4 class="card-title px-2 pt-3 fw-normal">Tata cara voting yang sah menurut hukum indonesia</h4>
-                    <p class="card-text px-2" style="font-size: 15px; line-height: 20px;">a long established fact that a
-                        reader will be distracted by the readable content of a page when looking at its layout. The
-                        point of using Lorem Ipsum is that it has a more-or-less normal distribution</p>
+            <div class="carousel-inner gap-md-4 gap-lg-0">
 
-                    <div class="card-footer text-end border-0 bg-none p-3"
-                        style="background-color: #fff; border-radius: 0 0 19px 19px;">
-                        <a href="isi-artikel.html" class="text-decoration-none fw-bold" style="color: #2A3E63">Selengkapnya>></a>
+                <div class="carousel-item active">
+                    <div class="card"
+                        style="border: 2px solid rgba(27, 36, 52, 0.38);box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25); border-radius: 19px;">
+                        <div class="w-100 d-flex justify-content-between py-2 px-2">
+                            <div class="user d-flex">
+                                <img src="../asset/svg/person-fill.svg" alt="person">
+                                <p class="my-auto"
+                                    style="color: rgba(30, 30, 30, 0.7); font-size: 13px; margin-left: 4px;">
+                                    Admin</p>
+                            </div>
+                            <div class="user d-flex">
+                                <img src="../asset/svg/calendar3.svg" alt="Calendar">
+                                <p class="my-auto"
+                                    style="color: rgba(30, 30, 30, 0.7); font-size: 13px; margin-left: 4px;">
+                                    01 Desember 2022</p>
+                            </div>
+                        </div>
+                        <img src="../asset/images/no image.png" alt="no image" class="card-img-top px-2">
+                        <h4 class="card-title px-2 pt-3 fw-normal">Tata cara voting yang sah menurut hukum indonesia
+                        </h4>
+                        <p class="card-text px-2" style="font-size: 15px; line-height: 20px;">a long established fact
+                            that a
+                            reader will be distracted by the readable content of a page when looking at its layout. The
+                            point of using Lorem Ipsum is that it has a more-or-less normal distribution</p>
+
+                        <div class="card-footer text-end border-0 bg-none p-3"
+                            style="background-color: #fff; border-radius: 0 0 19px 19px;">
+                            <a href="isi-artikel.html" class="text-decoration-none fw-bold"
+                                style="color: #2A3E63">Selengkapnya>></a>
+                        </div>
                     </div>
                 </div>
-            </div>
-    
-            <div class="carousel-item">
-              <div class="card"
-                    style="border: 2px solid rgba(27, 36, 52, 0.38);box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25); border-radius: 19px;">
-                    <div class="w-100 d-flex justify-content-between py-2 px-2">
-                        <div class="user d-flex">
-                            <img src="../asset/svg/person-fill.svg" alt="person">
-                            <p class="my-auto" style="color: rgba(30, 30, 30, 0.7); font-size: 13px; margin-left: 4px;">
-                                Admin</p>
-                        </div>
-                        <div class="user d-flex">
-                            <img src="../asset/svg/calendar3.svg" alt="Calendar">
-                            <p class="my-auto" style="color: rgba(30, 30, 30, 0.7); font-size: 13px; margin-left: 4px;">
-                                01 Desember 2022</p>
-                        </div>
-                    </div>
-                    <img src="../asset/images/no image.png" alt="no image" class="card-img-top px-2">
-                    <h4 class="card-title px-2 pt-3 fw-normal">Tata cara voting yang sah menurut hukum indonesia</h4>
-                    <p class="card-text px-2" style="font-size: 15px; line-height: 20px;">a long established fact that a
-                        reader will be distracted by the readable content of a page when looking at its layout. The
-                        point of using Lorem Ipsum is that it has a more-or-less normal distribution</p>
 
-                    <div class="card-footer text-end border-0 bg-none p-3"
-                        style="background-color: #fff; border-radius: 0 0 19px 19px;">
-                        <a href="isi-artikel.html" class="text-decoration-none fw-bold" style="color: #2A3E63">Selengkapnya>></a>
+                <div class="carousel-item">
+                    <div class="card"
+                        style="border: 2px solid rgba(27, 36, 52, 0.38);box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25); border-radius: 19px;">
+                        <div class="w-100 d-flex justify-content-between py-2 px-2">
+                            <div class="user d-flex">
+                                <img src="../asset/svg/person-fill.svg" alt="person">
+                                <p class="my-auto"
+                                    style="color: rgba(30, 30, 30, 0.7); font-size: 13px; margin-left: 4px;">
+                                    Admin</p>
+                            </div>
+                            <div class="user d-flex">
+                                <img src="../asset/svg/calendar3.svg" alt="Calendar">
+                                <p class="my-auto"
+                                    style="color: rgba(30, 30, 30, 0.7); font-size: 13px; margin-left: 4px;">
+                                    01 Desember 2022</p>
+                            </div>
+                        </div>
+                        <img src="../asset/images/no image.png" alt="no image" class="card-img-top px-2">
+                        <h4 class="card-title px-2 pt-3 fw-normal">Tata cara voting yang sah menurut hukum indonesia
+                        </h4>
+                        <p class="card-text px-2" style="font-size: 15px; line-height: 20px;">a long established fact
+                            that a
+                            reader will be distracted by the readable content of a page when looking at its layout. The
+                            point of using Lorem Ipsum is that it has a more-or-less normal distribution</p>
+
+                        <div class="card-footer text-end border-0 bg-none p-3"
+                            style="background-color: #fff; border-radius: 0 0 19px 19px;">
+                            <a href="isi-artikel.html" class="text-decoration-none fw-bold"
+                                style="color: #2A3E63">Selengkapnya>></a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            
-            <div class="carousel-item">
-              <div class="card"
-                    style="border: 2px solid rgba(27, 36, 52, 0.38);box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25); border-radius: 19px;">
-                    <div class="w-100 d-flex justify-content-between py-2 px-2">
-                        <div class="user d-flex">
-                            <img src="../asset/svg/person-fill.svg" alt="person">
-                            <p class="my-auto" style="color: rgba(30, 30, 30, 0.7); font-size: 13px; margin-left: 4px;">
-                                Admin</p>
-                        </div>
-                        <div class="user d-flex">
-                            <img src="../asset/svg/calendar3.svg" alt="Calendar">
-                            <p class="my-auto" style="color: rgba(30, 30, 30, 0.7); font-size: 13px; margin-left: 4px;">
-                                01 Desember 2022</p>
-                        </div>
-                    </div>
-                    <img src="../asset/images/no image.png" alt="no image" class="card-img-top px-2">
-                    <h4 class="card-title px-2 pt-3 fw-normal">Tata cara voting yang sah menurut hukum indonesia</h4>
-                    <p class="card-text px-2" style="font-size: 15px; line-height: 20px;">a long established fact that a
-                        reader will be distracted by the readable content of a page when looking at its layout. The
-                        point of using Lorem Ipsum is that it has a more-or-less normal distribution</p>
 
-                    <div class="card-footer text-end border-0 bg-none p-3"
-                        style="background-color: #fff; border-radius: 0 0 19px 19px;">
-                        <a href="isi-artikel.html" class="text-decoration-none fw-bold" style="color: #2A3E63">Selengkapnya>></a>
+                <div class="carousel-item">
+                    <div class="card"
+                        style="border: 2px solid rgba(27, 36, 52, 0.38);box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25); border-radius: 19px;">
+                        <div class="w-100 d-flex justify-content-between py-2 px-2">
+                            <div class="user d-flex">
+                                <img src="../asset/svg/person-fill.svg" alt="person">
+                                <p class="my-auto"
+                                    style="color: rgba(30, 30, 30, 0.7); font-size: 13px; margin-left: 4px;">
+                                    Admin</p>
+                            </div>
+                            <div class="user d-flex">
+                                <img src="../asset/svg/calendar3.svg" alt="Calendar">
+                                <p class="my-auto"
+                                    style="color: rgba(30, 30, 30, 0.7); font-size: 13px; margin-left: 4px;">
+                                    01 Desember 2022</p>
+                            </div>
+                        </div>
+                        <img src="../asset/images/no image.png" alt="no image" class="card-img-top px-2">
+                        <h4 class="card-title px-2 pt-3 fw-normal">Tata cara voting yang sah menurut hukum indonesia
+                        </h4>
+                        <p class="card-text px-2" style="font-size: 15px; line-height: 20px;">a long established fact
+                            that a
+                            reader will be distracted by the readable content of a page when looking at its layout. The
+                            point of using Lorem Ipsum is that it has a more-or-less normal distribution</p>
+
+                        <div class="card-footer text-end border-0 bg-none p-3"
+                            style="background-color: #fff; border-radius: 0 0 19px 19px;">
+                            <a href="isi-artikel.html" class="text-decoration-none fw-bold"
+                                style="color: #2A3E63">Selengkapnya>></a>
+                        </div>
                     </div>
                 </div>
-            </div>
-    
-            <div class="carousel-item">
-              <div class="card"
-                    style="border: 2px solid rgba(27, 36, 52, 0.38);box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25); border-radius: 19px;">
-                    <div class="w-100 d-flex justify-content-between py-2 px-2">
-                        <div class="user d-flex">
-                            <img src="../asset/svg/person-fill.svg" alt="person">
-                            <p class="my-auto" style="color: rgba(30, 30, 30, 0.7); font-size: 13px; margin-left: 4px;">
-                                Admin</p>
-                        </div>
-                        <div class="user d-flex">
-                            <img src="../asset/svg/calendar3.svg" alt="Calendar">
-                            <p class="my-auto" style="color: rgba(30, 30, 30, 0.7); font-size: 13px; margin-left: 4px;">
-                                01 Desember 2022</p>
-                        </div>
-                    </div>
-                    <img src="../asset/images/no image.png" alt="no image" class="card-img-top px-2">
-                    <h4 class="card-title px-2 pt-3 fw-normal">Tata cara voting yang sah menurut hukum indonesia</h4>
-                    <p class="card-text px-2" style="font-size: 15px; line-height: 20px;">a long established fact that a
-                        reader will be distracted by the readable content of a page when looking at its layout. The
-                        point of using Lorem Ipsum is that it has a more-or-less normal distribution</p>
 
-                    <div class="card-footer text-end border-0 bg-none p-3"
-                        style="background-color: #fff; border-radius: 0 0 19px 19px;">
-                        <a href="isi-artikel.html" class="text-decoration-none fw-bold" style="color: #2A3E63">Selengkapnya>></a>
+                <div class="carousel-item">
+                    <div class="card"
+                        style="border: 2px solid rgba(27, 36, 52, 0.38);box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25); border-radius: 19px;">
+                        <div class="w-100 d-flex justify-content-between py-2 px-2">
+                            <div class="user d-flex">
+                                <img src="../asset/svg/person-fill.svg" alt="person">
+                                <p class="my-auto"
+                                    style="color: rgba(30, 30, 30, 0.7); font-size: 13px; margin-left: 4px;">
+                                    Admin</p>
+                            </div>
+                            <div class="user d-flex">
+                                <img src="../asset/svg/calendar3.svg" alt="Calendar">
+                                <p class="my-auto"
+                                    style="color: rgba(30, 30, 30, 0.7); font-size: 13px; margin-left: 4px;">
+                                    01 Desember 2022</p>
+                            </div>
+                        </div>
+                        <img src="../asset/images/no image.png" alt="no image" class="card-img-top px-2">
+                        <h4 class="card-title px-2 pt-3 fw-normal">Tata cara voting yang sah menurut hukum indonesia
+                        </h4>
+                        <p class="card-text px-2" style="font-size: 15px; line-height: 20px;">a long established fact
+                            that a
+                            reader will be distracted by the readable content of a page when looking at its layout. The
+                            point of using Lorem Ipsum is that it has a more-or-less normal distribution</p>
+
+                        <div class="card-footer text-end border-0 bg-none p-3"
+                            style="background-color: #fff; border-radius: 0 0 19px 19px;">
+                            <a href="isi-artikel.html" class="text-decoration-none fw-bold"
+                                style="color: #2A3E63">Selengkapnya>></a>
+                        </div>
                     </div>
                 </div>
-            </div>
-    
-            <div class="carousel-item">
-              <div class="card"
-                    style="border: 2px solid rgba(27, 36, 52, 0.38);box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25); border-radius: 19px;">
-                    <div class="w-100 d-flex justify-content-between py-2 px-2">
-                        <div class="user d-flex">
-                            <img src="../asset/svg/person-fill.svg" alt="person">
-                            <p class="my-auto" style="color: rgba(30, 30, 30, 0.7); font-size: 13px; margin-left: 4px;">
-                                Admin</p>
-                        </div>
-                        <div class="user d-flex">
-                            <img src="../asset/svg/calendar3.svg" alt="Calendar">
-                            <p class="my-auto" style="color: rgba(30, 30, 30, 0.7); font-size: 13px; margin-left: 4px;">
-                                01 Desember 2022</p>
-                        </div>
-                    </div>
-                    <img src="../asset/images/no image.png" alt="no image" class="card-img-top px-2">
-                    <h4 class="card-title px-2 pt-3 fw-normal">Tata cara voting yang sah menurut hukum indonesia</h4>
-                    <p class="card-text px-2" style="font-size: 15px; line-height: 20px;">a long established fact that a
-                        reader will be distracted by the readable content of a page when looking at its layout. The
-                        point of using Lorem Ipsum is that it has a more-or-less normal distribution</p>
 
-                    <div class="card-footer text-end border-0 bg-none p-3"
-                        style="background-color: #fff; border-radius: 0 0 19px 19px;">
-                        <a href="isi-artikel.html" class="text-decoration-none fw-bold" style="color: #2A3E63">Selengkapnya>></a>
+                <div class="carousel-item">
+                    <div class="card"
+                        style="border: 2px solid rgba(27, 36, 52, 0.38);box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25); border-radius: 19px;">
+                        <div class="w-100 d-flex justify-content-between py-2 px-2">
+                            <div class="user d-flex">
+                                <img src="../asset/svg/person-fill.svg" alt="person">
+                                <p class="my-auto"
+                                    style="color: rgba(30, 30, 30, 0.7); font-size: 13px; margin-left: 4px;">
+                                    Admin</p>
+                            </div>
+                            <div class="user d-flex">
+                                <img src="../asset/svg/calendar3.svg" alt="Calendar">
+                                <p class="my-auto"
+                                    style="color: rgba(30, 30, 30, 0.7); font-size: 13px; margin-left: 4px;">
+                                    01 Desember 2022</p>
+                            </div>
+                        </div>
+                        <img src="../asset/images/no image.png" alt="no image" class="card-img-top px-2">
+                        <h4 class="card-title px-2 pt-3 fw-normal">Tata cara voting yang sah menurut hukum indonesia
+                        </h4>
+                        <p class="card-text px-2" style="font-size: 15px; line-height: 20px;">a long established fact
+                            that a
+                            reader will be distracted by the readable content of a page when looking at its layout. The
+                            point of using Lorem Ipsum is that it has a more-or-less normal distribution</p>
+
+                        <div class="card-footer text-end border-0 bg-none p-3"
+                            style="background-color: #fff; border-radius: 0 0 19px 19px;">
+                            <a href="isi-artikel.html" class="text-decoration-none fw-bold"
+                                style="color: #2A3E63">Selengkapnya>></a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            
-            <div class="carousel-item">
-              <div class="card"
-                    style="border: 2px solid rgba(27, 36, 52, 0.38);box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25); border-radius: 19px;">
-                    <div class="w-100 d-flex justify-content-between py-2 px-2">
-                        <div class="user d-flex">
-                            <img src="../asset/svg/person-fill.svg" alt="person">
-                            <p class="my-auto" style="color: rgba(30, 30, 30, 0.7); font-size: 13px; margin-left: 4px;">
-                                Admin</p>
-                        </div>
-                        <div class="user d-flex">
-                            <img src="../asset/svg/calendar3.svg" alt="Calendar">
-                            <p class="my-auto" style="color: rgba(30, 30, 30, 0.7); font-size: 13px; margin-left: 4px;">
-                                01 Desember 2022</p>
-                        </div>
-                    </div>
-                    <img src="../asset/images/no image.png" alt="no image" class="card-img-top px-2">
-                    <h4 class="card-title px-2 pt-3 fw-normal">Tata cara voting yang sah menurut hukum indonesia</h4>
-                    <p class="card-text px-2" style="font-size: 15px; line-height: 20px;">a long established fact that a
-                        reader will be distracted by the readable content of a page when looking at its layout. The
-                        point of using Lorem Ipsum is that it has a more-or-less normal distribution</p>
 
-                    <div class="card-footer text-end border-0 bg-none p-3"
-                        style="background-color: #fff; border-radius: 0 0 19px 19px;">
-                        <a href="isi-artikel.html" class="text-decoration-none fw-bold" style="color: #2A3E63">Selengkapnya>></a>
+                <div class="carousel-item">
+                    <div class="card"
+                        style="border: 2px solid rgba(27, 36, 52, 0.38);box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25); border-radius: 19px;">
+                        <div class="w-100 d-flex justify-content-between py-2 px-2">
+                            <div class="user d-flex">
+                                <img src="../asset/svg/person-fill.svg" alt="person">
+                                <p class="my-auto"
+                                    style="color: rgba(30, 30, 30, 0.7); font-size: 13px; margin-left: 4px;">
+                                    Admin</p>
+                            </div>
+                            <div class="user d-flex">
+                                <img src="../asset/svg/calendar3.svg" alt="Calendar">
+                                <p class="my-auto"
+                                    style="color: rgba(30, 30, 30, 0.7); font-size: 13px; margin-left: 4px;">
+                                    01 Desember 2022</p>
+                            </div>
+                        </div>
+                        <img src="../asset/images/no image.png" alt="no image" class="card-img-top px-2">
+                        <h4 class="card-title px-2 pt-3 fw-normal">Tata cara voting yang sah menurut hukum indonesia
+                        </h4>
+                        <p class="card-text px-2" style="font-size: 15px; line-height: 20px;">a long established fact
+                            that a
+                            reader will be distracted by the readable content of a page when looking at its layout. The
+                            point of using Lorem Ipsum is that it has a more-or-less normal distribution</p>
+
+                        <div class="card-footer text-end border-0 bg-none p-3"
+                            style="background-color: #fff; border-radius: 0 0 19px 19px;">
+                            <a href="isi-artikel.html" class="text-decoration-none fw-bold"
+                                style="color: #2A3E63">Selengkapnya>></a>
+                        </div>
                     </div>
                 </div>
+
             </div>
-    
-          </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
     </div>
     <!-- artikel lainnya END -->
@@ -350,42 +456,46 @@
     <!-- footer -->
     <div class="container-fluid">
         <div class="row justify-content-center footer-hero" style="margin-top: 300px;">
-        <div class="col-lg-6 col-11 col-md-8 text-center rounded-4 text-light p-4" style="background-color: #2A3E63; margin-top: -100px; box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.25);">
-            <h3 class="fw-bolder">Mau pakai Votingkeun sekarang?</h3>
-            <p class="fs-5">Request Demo untuk pelajari lebih lanjut tentang Votingkeun</p>
-            <button class="btn btn-warning" style="width: 180px; height: 50px; font-size: 20px; line-height: 10px;">Akun Demo</button>
-        </div>
+            <div class="col-lg-6 col-11 col-md-8 text-center rounded-4 text-light p-4"
+                style="background-color: #2A3E63; margin-top: -100px; box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.25);">
+                <h3 class="fw-bolder">Mau pakai Votingkeun sekarang?</h3>
+                <p class="fs-5">Request Demo untuk pelajari lebih lanjut tentang Votingkeun</p>
+                <button class="btn btn-warning"
+                    style="width: 180px; height: 50px; font-size: 20px; line-height: 10px;">Akun Demo</button>
+            </div>
 
-        <div class="row justify-content-center gap-lg-0 gap-5" style="margin-top: 100px; margin-bottom: 100px;">
-            <div class="col-lg-3 col-12 col-md-4 text-center d-flex flex-column gap-3 px-5">
-            <p class="fw-bold text-light" style="font-size: 23px;">Kontak</p>
-            <a href="" class="btn btn-outline-light rounded-4" style="margin-top: -16px;">+62 813 882 741 88</a>
-            <a href="" class="btn btn-outline-light rounded-4">info@votingkeun.my.id</a>
+            <div class="row justify-content-center gap-lg-0 gap-5" style="margin-top: 100px; margin-bottom: 100px;">
+                <div class="col-lg-3 col-12 col-md-4 text-center d-flex flex-column gap-3 px-5">
+                    <p class="fw-bold text-light" style="font-size: 23px;">Kontak</p>
+                    <a href="" class="btn btn-outline-light rounded-4" style="margin-top: -16px;">+62 813 882 741 88</a>
+                    <a href="" class="btn btn-outline-light rounded-4">info@votingkeun.my.id</a>
+                </div>
+                <div class="col-lg-3 col-12 col-md-4 text-center text-light">
+                    <p class="fw-bold" style="font-size: 23px;">Alamat</p>
+                    <p style="font-size: 20px; margin-top: -5px;">Jl. Cieunteung, Cilembang, <br> Kec. Cihideung, <br>
+                        Tasikmalaya, Jawa Barat</p>
+                </div>
             </div>
-            <div class="col-lg-3 col-12 col-md-4 text-center text-light">
-            <p class="fw-bold" style="font-size: 23px;">Alamat</p>
-            <p style="font-size: 20px; margin-top: -5px;">Jl. Cieunteung, Cilembang, <br> Kec. Cihideung, <br> Tasikmalaya, Jawa Barat</p>
-            </div>
-        </div>
 
-        <div class="row justify-content-center text-center" style="padding-bottom: 50px;">
-            <p class="fw-bold text-light" style="font-size: 23px">Social media</p>
-            <div class="col-lg-1 col-5 text-end">
-                <a href="">
-                <img src="../asset/svg/instagram.svg" alt="instagram" class="img-fluid">
-                </a>
+            <div class="row justify-content-center text-center" style="padding-bottom: 50px;">
+                <p class="fw-bold text-light" style="font-size: 23px">Social media</p>
+                <div class="col-lg-1 col-5 text-end">
+                    <a href="">
+                        <img src="../asset/svg/instagram.svg" alt="instagram" class="img-fluid">
+                    </a>
+                </div>
+                <div class="col-lg-1 col-5 text-start">
+                    <a href="">
+                        <img src="../asset/svg/whatsapp.svg" alt="instagram" class="img-fluid">
+                    </a>
+                </div>
             </div>
-            <div class="col-lg-1 col-5 text-start">
-                <a href="">
-                <img src="../asset/svg/whatsapp.svg" alt="instagram" class="img-fluid">
-                </a>
-            </div>
-        </div>
 
-        <div class="row w-100" style="height: 10px; background: #DBAB00;"></div>
-        <div class="row w-100 text-center" style="background: #1B2434;">
-            <p class="text-light" style="font-size: 18px; font-weight: 500; margin-top: 10px;">© 2022 Powered by Votingkeun Indonesia</p>
-        </div>
+            <div class="row w-100" style="height: 10px; background: #DBAB00;"></div>
+            <div class="row w-100 text-center" style="background: #1B2434;">
+                <p class="text-light" style="font-size: 18px; font-weight: 500; margin-top: 10px;">© 2022 Powered by
+                    Votingkeun Indonesia</p>
+            </div>
         </div>
     </div>
     <!-- footer END -->
@@ -396,7 +506,7 @@
         let carouselWidth = $(".carousel-inner")[0].scrollWidth;
         let cardWidth = $(".carousel-item").width();
         let scrollPosition = 0;
-        
+
         let multipleCardCarousel = document.querySelector(
             "#carouselExampleControls"
         );
